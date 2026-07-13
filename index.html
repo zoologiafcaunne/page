@@ -1,1 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zoología Agrícola · FCA UNNE</title>
+<meta name="description" content="Espacio de la cátedra Zoología Agrícola, Facultad de Ciencias Agrarias, UNNE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta: #1F2A1E;
+    --pergamino: #EFE9DA;
+    --pergamino-claro: #F8F4E9;
+    --tierra: #A8442B;
+    --tierra-oscura: #7E3220;
+    --musgo: #566246;
+    --musgo-claro: #7C8A67;
+    --oro: #C79A3D;
+    --linea: rgba(31,42,30,0.15);
+  }
 
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--pergamino);
+    color: var(--tinta);
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before{
+    content:"";
+    position: fixed;
+    inset:0;
+    pointer-events:none;
+    background-image: radial-gradient(rgba(31,42,30,0.035) 1px, transparent 1px);
+    background-size: 3px 3px;
+    z-index: 0;
+  }
+
+  h1,h2,h3{
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    margin:0;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tierra-oscura);
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  header.site{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(239,233,218,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--linea);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Bitter', serif;
+    font-weight:700;
+    font-size: 1.05rem;
+  }
+  .brand img{
+    width:40px;
+    height:40px;
+    object-fit: contain;
+    flex-shrink:0;
+  }
+  .brand small{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--musgo);
+    margin-top: 1px;
+  }
+  nav.links{
+    display:flex;
+    gap: 28px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size: 0.92rem;
+  }
+  nav.links a{
+    text-decoration:none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease, color .2s ease;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+  nav.links a:hover{ border-color: var(--tierra); color: var(--tierra-oscura); }
+
+  /* HERO */
+  .hero{
+    padding: 80px 0 70px;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+    line-height: 1.1;
+    color: var(--tierra);
+  }
+  .hero p.lede{
+    margin-top: 18px;
+    font-size: 1.08rem;
+    max-width: 46ch;
+    color: #3a3f33;
+  }
+  .hero .tags{
+    margin-top: 26px;
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    border: 1px solid var(--linea);
+    padding: 6px 11px;
+    border-radius: 999px;
+    color: var(--musgo);
+    background: var(--pergamino-claro);
+  }
+
+  .hero-art{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+  }
+  .hero-art .marco{
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--pergamino-claro);
+    border: 1px solid var(--linea);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 24px;
+  }
+  .hero-art img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .hero-art .caption{
+    font-family:'Bitter', serif;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--tinta);
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  /* SECTIONS */
+  section{ padding: 60px 0; border-top: 1px solid var(--linea); }
+  .section-head{ margin-bottom: 30px; }
+  .section-head h2{ font-size: 1.5rem; }
+  .section-head p{ margin: 6px 0 0; color: var(--musgo); font-size: 0.95rem; }
+
+  /* NUBES - recomendaciones */
+  .nubes-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  .nube{
+    position: relative;
+    background: var(--pergamino-claro);
+    border: 1.5px solid var(--tierra);
+    border-radius: 200px;
+    min-height: 150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding: 30px 40px;
+    margin-top: 30px;
+  }
+  .nube::before, .nube::after{
+    content:"";
+    position:absolute;
+    background: var(--pergamino-claro);
+    border: 1.5px solid var(--tierra);
+    border-radius: 50%;
+  }
+  .nube::before{
+    width: 90px; height: 90px;
+    top: -46px; left: 30px;
+    border-bottom-color: var(--pergamino-claro);
+    z-index: 1;
+  }
+  .nube::after{
+    width: 60px; height: 60px;
+    top: -32px; right: 40px;
+    border-bottom-color: var(--pergamino-claro);
+    z-index: 1;
+  }
+  .nube .contenido{
+    position: relative;
+    z-index: 2;
+  }
+  .nube h3{
+    font-size: 1.05rem;
+    color: var(--tierra-oscura);
+    line-height: 1.35;
+  }
+  .nube p{
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--musgo);
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+
+  /* fila referencias / anuncios */
+  .fila-doble{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  /* nube tipo globo de pensamiento - referencias */
+  .globo{
+    position: relative;
+    background: var(--musgo);
+    color: var(--pergamino-claro);
+    border-radius: 30px 30px 30px 6px;
+    padding: 32px 34px;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    min-height: 160px;
+  }
+  .globo::after{
+    content:"";
+    position:absolute;
+    bottom: -14px;
+    left: 34px;
+    width: 22px;
+    height: 22px;
+    background: var(--musgo);
+    border-radius: 50%;
+  }
+  .globo h3{
+    font-size: 1.05rem;
+    color: #fff;
+  }
+  .globo p{
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: rgba(248,244,233,0.8);
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* ventana de anuncios */
+  .ventana{
+    background: var(--pergamino-claro);
+    border: 1px solid var(--linea);
+    border-radius: 6px;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    min-height: 160px;
+  }
+  .ventana .barra{
+    background: var(--tinta);
+    padding: 10px 14px;
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+  .ventana .barra span{
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    display:inline-block;
+  }
+  .ventana .barra span:nth-child(1){ background: var(--tierra); }
+  .ventana .barra span:nth-child(2){ background: var(--oro); }
+  .ventana .barra span:nth-child(3){ background: var(--musgo-claro); }
+  .ventana .barra strong{
+    margin-left: 8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--pergamino-claro);
+    text-transform: uppercase;
+  }
+  .ventana .cuerpo{
+    padding: 24px;
+    flex-grow:1;
+    display:flex;
+    align-items:center;
+    border: 1px dashed var(--linea);
+    margin: 14px;
+    border-radius: 4px;
+  }
+  .ventana .cuerpo p{
+    font-size: 0.9rem;
+    color: var(--musgo);
+    margin: 0;
+  }
+
+  footer{
+    border-top: 1px solid var(--linea);
+    padding: 30px 0 40px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--musgo);
+  }
+
+  @media (max-width: 860px){
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .hero-art{ order:-1; }
+    .nubes-grid{ grid-template-columns: 1fr; gap: 60px; }
+    .fila-doble{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px){
+    .wrap{ padding: 0 20px; }
+    .nube{ padding: 26px 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <div class="brand">
+      <img src="avatar.png" alt="Escudo Zoología Agrícola FCA UNNE">
+      <span>Zoología Agrícola<small>FCA · UNNE</small></span>
+    </div>
+    <ul class="links">
+      <li><a href="#">Home</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Cátedra · FCA · UNNE</p>
+        <h1>Bienvenidos a<br>ZOOLOGÍA AGRÍCOLA</h1>
+        <p class="lede">Una materia de tercer año de la carrera de Ingeniería Agronómica de la Facultad de Ciencias Agrarias de la UNNE.</p>
+      </div>
+      <div class="hero-art">
+        <div class="marco">
+          <img src="avatar.png" alt="Escudo Zoología Agrícola FCA UNNE">
+        </div>
+        <span class="caption">Zoología Agrícola</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="recomendaciones">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Guías rápidas</p>
+        <h2>Recomendaciones</h2>
+      </div>
+      <div class="nubes-grid">
+        <div class="nube">
+          <div class="contenido">
+            <h3>Recomendaciones para cursar la materia</h3>
+            <p>Próximamente</p>
+          </div>
+        </div>
+        <div class="nube">
+          <div class="contenido">
+            <h3>Recomendaciones para rendir el examen final</h3>
+            <p>Próximamente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="referencias-anuncios">
+    <div class="wrap">
+      <div class="fila-doble">
+        <div class="globo">
+          <h3>Referencias bibliográficas</h3>
+          <p>Luego cargaremos los enlaces acá.</p>
+        </div>
+        <div class="ventana">
+          <div class="barra">
+            <span></span><span></span><span></span>
+            <strong>Anuncios actuales</strong>
+          </div>
+          <div class="cuerpo">
+            <p>Todavía no hay anuncios cargados. Pronto vamos a ir sumando novedades acá.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Zoología Agrícola — Facultad de Ciencias Agrarias, UNNE</span>
+    <span>Corrientes, Argentina</span>
+  </div>
+</footer>
+
+</body>
+</html>
