@@ -81,50 +81,20 @@
     border-bottom: 1px solid var(--linea);
   }
   nav.wrap{
-    display:grid;
-    grid-template-columns: minmax(0,1fr) auto minmax(0,1fr);
+    display:flex;
+    justify-content:center;
     align-items:center;
     padding-top: 14px;
     padding-bottom: 14px;
   }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
+  .brand-central{
     font-family:'Bitter', serif;
     font-weight:700;
-    font-size: 1.02rem;
-  }
-  .brand small{
-    display:block;
-    font-family:'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 1.05rem;
     letter-spacing: 0.08em;
-    color: var(--musgo);
-    margin-top: 1px;
-  }
-  .links{
-    display:flex;
-    gap: 28px;
-    list-style:none;
-    margin:0;
-    padding:0;
-    justify-self: center;
-  }
-  .links a{
-    text-decoration:none;
-    padding-bottom: 3px;
-    border-bottom: 1px solid transparent;
-    transition: border-color .2s ease, color .2s ease;
-    font-family:'IBM Plex Mono', monospace;
-    font-weight: 500;
-    font-size: 0.82rem;
-    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--musgo);
   }
-  .links a:hover{ border-color: var(--musgo); color: var(--tinta); }
 
   /* HERO */
   .hero{
@@ -374,12 +344,7 @@
 
 <header class="site">
   <nav class="wrap">
-    <div class="brand">
-      <span>Zoología Agrícola<small>FCA · UNNE</small></span>
-    </div>
-    <ul class="links">
-      <li><a href="#">Home</a></li>
-    </ul>
+    <span class="brand-central">BIENVENIDOS</span>
   </nav>
 </header>
 
@@ -485,7 +450,7 @@
   </div>
 </footer>
 
-<a class="boton-mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zoologiaunne@gmail.com" target="_blank" rel="noopener" aria-label="Escribinos por mail">
+<a class="boton-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=zoologiaunne@gmail.com" target="_blank" rel="noopener" aria-label="Escribinos por mail">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="2" y="5" width="20" height="14" rx="2.5" stroke="var(--pergamino-claro)" stroke-width="1.8"/>
     <path d="M3 6.5 L12 13 L21 6.5" stroke="var(--pergamino-claro)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
