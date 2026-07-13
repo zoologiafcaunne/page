@@ -81,9 +81,9 @@
     border-bottom: 1px solid var(--linea);
   }
   nav.wrap{
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items:center;
-    justify-content: space-between;
     padding-top: 14px;
     padding-bottom: 14px;
   }
@@ -95,12 +95,6 @@
     font-weight:700;
     font-size: 1.02rem;
   }
-  .brand img{
-    width:38px;
-    height:38px;
-    object-fit: contain;
-    flex-shrink:0;
-  }
   .brand small{
     display:block;
     font-family:'IBM Plex Mono', monospace;
@@ -110,23 +104,27 @@
     color: var(--musgo);
     margin-top: 1px;
   }
-  nav.links{
+  .links{
     display:flex;
     gap: 28px;
     list-style:none;
     margin:0;
     padding:0;
+    justify-self: center;
   }
-  nav.links a{
+  .links a{
     text-decoration:none;
     padding-bottom: 3px;
     border-bottom: 1px solid transparent;
     transition: border-color .2s ease, color .2s ease;
     font-family:'IBM Plex Mono', monospace;
-    font-size: 0.76rem;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--musgo);
   }
-  nav.links a:hover{ border-color: var(--musgo); color: var(--musgo); }
+  .links a:hover{ border-color: var(--musgo); color: var(--tinta); }
 
   /* HERO */
   .hero{
@@ -176,15 +174,6 @@
     height: 100%;
     object-fit: contain;
   }
-  .hero-art .caption{
-    font-family:'Bitter', serif;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-    color: var(--musgo);
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    text-align:center;
-  }
 
   /* SECTIONS */
   section{ padding: 54px 0; border-top: 1px solid var(--linea); }
@@ -196,7 +185,7 @@
   .avisos{
     position: relative;
     background: var(--negro);
-    border: 1.5px solid var(--tierra);
+    border: 1.5px solid var(--verde-vivo);
     border-radius: 18px;
     padding: 30px 36px;
     display:flex;
@@ -211,8 +200,8 @@
     inset:0;
     background: repeating-linear-gradient(
       115deg,
-      rgba(168,68,43,0.06) 0px,
-      rgba(168,68,43,0.06) 1px,
+      rgba(76,138,50,0.09) 0px,
+      rgba(76,138,50,0.09) 1px,
       transparent 1px,
       transparent 26px
     );
@@ -223,8 +212,8 @@
     z-index:1;
     width: 12px; height: 12px;
     border-radius: 50%;
-    background: var(--tierra);
-    box-shadow: 0 0 10px 2px rgba(168,68,43,0.7);
+    background: var(--verde-vivo);
+    box-shadow: 0 0 10px 2px rgba(76,138,50,0.7);
     flex-shrink: 0;
     animation: parpadeo 1.8s ease-in-out infinite;
   }
@@ -234,7 +223,7 @@
   }
   .avisos .texto{ position:relative; z-index:1; }
   .avisos h2{
-    color: var(--tierra);
+    color: var(--verde-vivo);
     font-size: clamp(1.5rem, 3vw, 2rem);
     letter-spacing: 0.03em;
   }
@@ -341,7 +330,6 @@
 <header class="site">
   <nav class="wrap">
     <div class="brand">
-      <img src="logo.png" alt="Escudo Zoología Agrícola FCA UNNE">
       <span>Zoología Agrícola<small>FCA · UNNE</small></span>
     </div>
     <ul class="links">
@@ -362,7 +350,6 @@
         <div class="marco">
           <img src="logo.png" alt="Escudo Zoología Agrícola FCA UNNE">
         </div>
-        <span class="caption">Zoología Agrícola</span>
       </div>
     </div>
   </section>
