@@ -10,14 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --tinta: #1F2A1E;
-    --pergamino: #EFE9DA;
-    --pergamino-claro: #F8F4E9;
-    --tierra: #A8442B;
-    --tierra-oscura: #7E3220;
-    --musgo: #566246;
-    --musgo-claro: #7C8A67;
-    --oro: #C79A3D;
+    --tinta: #1B1B1B;
+    --negro: #141210;
+    --pergamino: #F5F6EF;
+    --pergamino-claro: #FFFFFF;
+    --tierra: #C6402B;
+    --tierra-oscura: #8F2C1D;
+    --musgo: #2E5D24;
+    --musgo-claro: #7CB342;
+    --oro: #9ACD4E;
+    --verde-vivo: #4C8A32;
     --linea: rgba(31,42,30,0.15);
   }
 
@@ -55,10 +57,11 @@
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--tierra-oscura);
+    color: var(--musgo);
   }
 
   a{ color: inherit; }
+  img{ max-width: 100%; display:block; }
 
   .wrap{
     max-width: 1080px;
@@ -73,7 +76,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: rgba(239,233,218,0.92);
+    background: rgba(239,233,218,0.94);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--linea);
   }
@@ -81,8 +84,8 @@
     display:flex;
     align-items:center;
     justify-content: space-between;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
   }
   .brand{
     display:flex;
@@ -90,11 +93,11 @@
     gap:12px;
     font-family:'Bitter', serif;
     font-weight:700;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
   .brand img{
-    width:40px;
-    height:40px;
+    width:38px;
+    height:38px;
     object-fit: contain;
     flex-shrink:0;
   }
@@ -102,7 +105,7 @@
     display:block;
     font-family:'IBM Plex Mono', monospace;
     font-weight: 500;
-    font-size: 0.62rem;
+    font-size: 0.6rem;
     letter-spacing: 0.08em;
     color: var(--musgo);
     margin-top: 1px;
@@ -113,7 +116,6 @@
     list-style:none;
     margin:0;
     padding:0;
-    font-size: 0.92rem;
   }
   nav.links a{
     text-decoration:none;
@@ -121,47 +123,32 @@
     border-bottom: 1px solid transparent;
     transition: border-color .2s ease, color .2s ease;
     font-family:'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     letter-spacing: 0.08em;
   }
-  nav.links a:hover{ border-color: var(--tierra); color: var(--tierra-oscura); }
+  nav.links a:hover{ border-color: var(--musgo); color: var(--musgo); }
 
   /* HERO */
   .hero{
-    padding: 80px 0 70px;
+    padding: 64px 0 60px;
   }
   .hero .wrap{
     display:grid;
     grid-template-columns: 1.1fr 0.9fr;
-    gap: 48px;
+    gap: 40px;
     align-items:center;
   }
   .hero h1{
-    font-size: clamp(2.1rem, 4.2vw, 3.2rem);
-    line-height: 1.1;
-    color: var(--tierra);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
   }
+  .hero h1 .linea-negra{ color: var(--tinta); display:block; }
+  .hero h1 .linea-roja{ color: var(--musgo); display:block; }
   .hero p.lede{
     margin-top: 18px;
-    font-size: 1.08rem;
+    font-size: 1.05rem;
     max-width: 46ch;
     color: #3a3f33;
-  }
-  .hero .tags{
-    margin-top: 26px;
-    display:flex;
-    gap:10px;
-    flex-wrap: wrap;
-  }
-  .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    border: 1px solid var(--linea);
-    padding: 6px 11px;
-    border-radius: 999px;
-    color: var(--musgo);
-    background: var(--pergamino-claro);
   }
 
   .hero-art{
@@ -169,21 +156,22 @@
     flex-direction: column;
     align-items:center;
     justify-content:center;
-    gap: 14px;
+    gap: 12px;
   }
   .hero-art .marco{
     width: 100%;
-    max-width: 300px;
+    max-width: 260px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background: var(--pergamino-claro);
-    border: 1px solid var(--linea);
+    border: 1px solid rgba(46,93,36,0.25);
     display:flex;
     align-items:center;
     justify-content:center;
-    padding: 24px;
+    padding: 20px;
+    overflow: hidden;
   }
-  .hero-art img{
+  .hero-art .marco img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -191,160 +179,129 @@
   .hero-art .caption{
     font-family:'Bitter', serif;
     font-weight: 800;
-    letter-spacing: 0.04em;
-    color: var(--tinta);
-    font-size: 1rem;
+    letter-spacing: 0.03em;
+    color: var(--musgo);
+    font-size: 0.95rem;
     text-transform: uppercase;
+    text-align:center;
   }
 
   /* SECTIONS */
-  section{ padding: 60px 0; border-top: 1px solid var(--linea); }
-  .section-head{ margin-bottom: 30px; }
-  .section-head h2{ font-size: 1.5rem; }
-  .section-head p{ margin: 6px 0 0; color: var(--musgo); font-size: 0.95rem; }
+  section{ padding: 54px 0; border-top: 1px solid var(--linea); }
+  .section-head{ margin-bottom: 8px; text-align:center; }
+  .section-head p.eyebrow{ text-align:center; }
+  .section-head h2{ font-size: 1.4rem; }
 
-  /* NUBES - recomendaciones */
-  .nubes-grid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-  }
-  .nube{
+  /* AVISOS - cartel principal */
+  .avisos{
     position: relative;
-    background: var(--pergamino-claro);
+    background: var(--negro);
     border: 1.5px solid var(--tierra);
-    border-radius: 200px;
-    min-height: 150px;
+    border-radius: 18px;
+    padding: 30px 36px;
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding: 30px 40px;
-    margin-top: 30px;
+    gap: 22px;
+    overflow: hidden;
+    margin-bottom: 46px;
   }
-  .nube::before, .nube::after{
+  .avisos::before{
     content:"";
     position:absolute;
-    background: var(--pergamino-claro);
-    border: 1.5px solid var(--tierra);
-    border-radius: 50%;
+    inset:0;
+    background: repeating-linear-gradient(
+      115deg,
+      rgba(168,68,43,0.06) 0px,
+      rgba(168,68,43,0.06) 1px,
+      transparent 1px,
+      transparent 26px
+    );
+    pointer-events:none;
   }
-  .nube::before{
-    width: 90px; height: 90px;
-    top: -46px; left: 30px;
-    border-bottom-color: var(--pergamino-claro);
-    z-index: 1;
-  }
-  .nube::after{
-    width: 60px; height: 60px;
-    top: -32px; right: 40px;
-    border-bottom-color: var(--pergamino-claro);
-    z-index: 1;
-  }
-  .nube .contenido{
+  .avisos .estado{
     position: relative;
-    z-index: 2;
+    z-index:1;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--tierra);
+    box-shadow: 0 0 10px 2px rgba(168,68,43,0.7);
+    flex-shrink: 0;
+    animation: parpadeo 1.8s ease-in-out infinite;
   }
-  .nube h3{
-    font-size: 1.05rem;
-    color: var(--tierra-oscura);
-    line-height: 1.35;
+  @keyframes parpadeo{
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
   }
-  .nube p{
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: var(--musgo);
-    font-family:'IBM Plex Mono', monospace;
+  .avisos .texto{ position:relative; z-index:1; }
+  .avisos h2{
+    color: var(--tierra);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: 0.03em;
+  }
+  .avisos p{
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
     letter-spacing: 0.02em;
+    color: rgba(248,244,233,0.68);
   }
 
-  /* fila referencias / anuncios */
-  .fila-doble{
+  /* Tarjetas modernas unificadas (recomendaciones / bibliografía) */
+  .tarjetas{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: stretch;
+    gap: 28px;
+    margin-top: 44px;
   }
-
-  /* nube tipo globo de pensamiento - referencias */
-  .globo{
+  .tarjeta{
     position: relative;
-    background: var(--musgo);
-    color: var(--pergamino-claro);
-    border-radius: 30px 30px 30px 6px;
-    padding: 32px 34px;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    min-height: 160px;
-  }
-  .globo::after{
-    content:"";
-    position:absolute;
-    bottom: -14px;
-    left: 34px;
-    width: 22px;
-    height: 22px;
-    background: var(--musgo);
-    border-radius: 50%;
-  }
-  .globo h3{
-    font-size: 1.05rem;
-    color: #fff;
-  }
-  .globo p{
-    margin-top: 10px;
-    font-size: 0.85rem;
-    color: rgba(248,244,233,0.8);
-    font-family:'IBM Plex Mono', monospace;
-  }
-
-  /* ventana de anuncios */
-  .ventana{
     background: var(--pergamino-claro);
     border: 1px solid var(--linea);
-    border-radius: 6px;
-    overflow: hidden;
-    display:flex;
-    flex-direction: column;
-    min-height: 160px;
+    border-radius: 18px;
+    padding: 44px 26px 28px;
+    text-align:center;
+    box-shadow: 0 10px 24px -18px rgba(31,42,30,0.5);
+    transition: transform .18s ease, box-shadow .18s ease;
   }
-  .ventana .barra{
-    background: var(--tinta);
-    padding: 10px 14px;
-    display:flex;
-    align-items:center;
-    gap: 8px;
+  .tarjeta:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px -16px rgba(31,42,30,0.5);
   }
-  .ventana .barra span{
-    width: 9px; height: 9px;
+  .tarjeta .icono{
+    width: 64px; height: 64px;
     border-radius: 50%;
-    display:inline-block;
-  }
-  .ventana .barra span:nth-child(1){ background: var(--tierra); }
-  .ventana .barra span:nth-child(2){ background: var(--oro); }
-  .ventana .barra span:nth-child(3){ background: var(--musgo-claro); }
-  .ventana .barra strong{
-    margin-left: 8px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    color: var(--pergamino-claro);
-    text-transform: uppercase;
-  }
-  .ventana .cuerpo{
-    padding: 24px;
-    flex-grow:1;
+    background: var(--pergamino);
+    border: 2px solid var(--musgo);
     display:flex;
     align-items:center;
-    border: 1px dashed var(--linea);
-    margin: 14px;
-    border-radius: 4px;
+    justify-content:center;
+    margin: -70px auto 16px;
+    box-shadow: 0 6px 14px -6px rgba(31,42,30,0.4);
   }
-  .ventana .cuerpo p{
-    font-size: 0.9rem;
+  .tarjeta .icono svg{ width: 34px; height:34px; }
+  .tarjeta.musgo-tema .icono{ border-color: var(--verde-vivo); }
+  .tarjeta h3{
+    font-size: 1rem;
     color: var(--musgo);
-    margin: 0;
+    line-height: 1.4;
+  }
+  .tarjeta.musgo-tema h3{ color: var(--verde-vivo); }
+  .tarjeta .estado-tag{
+    display:inline-block;
+    margin-top: 14px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--musgo-claro);
+    border: 1px solid var(--linea);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  .tarjeta-ancha{
+    max-width: 480px;
+    margin: 44px auto 0;
   }
 
   footer{
@@ -364,16 +321,18 @@
   @media (max-width: 860px){
     .hero .wrap{ grid-template-columns: 1fr; }
     .hero-art{ order:-1; }
-    .nubes-grid{ grid-template-columns: 1fr; gap: 60px; }
-    .fila-doble{ grid-template-columns: 1fr; }
+    .tarjetas{ grid-template-columns: 1fr; gap: 60px; }
+    .avisos{ flex-direction: column; text-align:center; }
   }
   @media (max-width: 480px){
     .wrap{ padding: 0 20px; }
-    .nube{ padding: 26px 24px; }
+    .avisos{ padding: 26px 22px; }
   }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
+    .avisos .estado{ animation: none; }
+    .tarjeta{ transition:none; }
   }
 </style>
 </head>
@@ -382,7 +341,7 @@
 <header class="site">
   <nav class="wrap">
     <div class="brand">
-      <img src="avatar.png" alt="Escudo Zoología Agrícola FCA UNNE">
+      <img src="logo.png" alt="Escudo Zoología Agrícola FCA UNNE">
       <span>Zoología Agrícola<small>FCA · UNNE</small></span>
     </div>
     <ul class="links">
@@ -396,58 +355,83 @@
     <div class="wrap">
       <div>
         <p class="eyebrow">Cátedra · FCA · UNNE</p>
-        <h1>Bienvenidos a<br>ZOOLOGÍA AGRÍCOLA</h1>
+        <h1><span class="linea-negra">Bienvenidos a</span><span class="linea-roja">ZOOLOGÍA AGRÍCOLA</span></h1>
         <p class="lede">Una materia de tercer año de la carrera de Ingeniería Agronómica de la Facultad de Ciencias Agrarias de la UNNE.</p>
       </div>
       <div class="hero-art">
         <div class="marco">
-          <img src="avatar.png" alt="Escudo Zoología Agrícola FCA UNNE">
+          <img src="logo.png" alt="Escudo Zoología Agrícola FCA UNNE">
         </div>
         <span class="caption">Zoología Agrícola</span>
       </div>
     </div>
   </section>
 
-  <section class="recomendaciones">
+  <section class="tablero">
     <div class="wrap">
+
+      <div class="avisos">
+        <span class="estado"></span>
+        <div class="texto">
+          <h2>¡AVISOS!</h2>
+          <p>Acá vamos a ir publicando novedades de la cátedra en tiempo real.</p>
+        </div>
+      </div>
+
       <div class="section-head">
         <p class="eyebrow">Guías rápidas</p>
         <h2>Recomendaciones</h2>
       </div>
-      <div class="nubes-grid">
-        <div class="nube">
-          <div class="contenido">
-            <h3>Recomendaciones para cursar la materia</h3>
-            <p>Próximamente</p>
-          </div>
-        </div>
-        <div class="nube">
-          <div class="contenido">
-            <h3>Recomendaciones para rendir el examen final</h3>
-            <p>Próximamente</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="referencias-anuncios">
-    <div class="wrap">
-      <div class="fila-doble">
-        <div class="globo">
-          <h3>Referencias bibliográficas</h3>
-          <p>Luego cargaremos los enlaces acá.</p>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <div class="icono">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="20" cy="22" rx="7" ry="11" fill="var(--musgo)"/>
+              <line x1="20" y1="12" x2="20" y2="32" stroke="var(--tinta)" stroke-width="1.2"/>
+              <circle cx="20" cy="9" r="4" fill="var(--tinta)"/>
+              <path d="M20 9 C16 3, 9 4, 7 8" stroke="var(--tinta)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <path d="M20 9 C24 3, 31 4, 33 8" stroke="var(--tinta)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <path d="M13 18 L4 14 M13 24 L4 26 M27 18 L36 14 M27 24 L36 26" stroke="var(--tinta)" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Recomendaciones para rendir el examen final</h3>
+          <span class="estado-tag">Próximamente</span>
         </div>
-        <div class="ventana">
-          <div class="barra">
-            <span></span><span></span><span></span>
-            <strong>Anuncios actuales</strong>
+
+        <div class="tarjeta">
+          <div class="icono">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="20" cy="22" rx="8" ry="10" fill="var(--verde-vivo)"/>
+              <path d="M20 12 C18 5, 15 3, 12 3" stroke="var(--tinta)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <circle cx="11" cy="3" r="1.6" fill="var(--tinta)"/>
+              <circle cx="20" cy="14" r="3" fill="var(--tinta)"/>
+              <path d="M12 20 L4 17 M12 26 L4 28 M28 20 L36 17 M28 26 L36 28" stroke="var(--tinta)" stroke-width="1.4" stroke-linecap="round"/>
+              <line x1="20" y1="17" x2="20" y2="31" stroke="var(--tinta)" stroke-width="1.2"/>
+            </svg>
           </div>
-          <div class="cuerpo">
-            <p>Todavía no hay anuncios cargados. Pronto vamos a ir sumando novedades acá.</p>
-          </div>
+          <h3>Recomendaciones para cursar la materia</h3>
+          <span class="estado-tag">Próximamente</span>
         </div>
       </div>
+
+      <div class="tarjeta musgo-tema tarjeta-ancha">
+        <div class="icono">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 8 H20 V32 H8 Z" fill="var(--musgo)"/>
+            <path d="M32 8 H20 V32 H32 Z" fill="var(--musgo-claro)"/>
+            <path d="M8 8 C12 6, 16 6, 20 8" stroke="var(--tinta)" stroke-width="1.3" fill="none"/>
+            <path d="M32 8 C28 6, 24 6, 20 8" stroke="var(--tinta)" stroke-width="1.3" fill="none"/>
+            <line x1="11" y1="14" x2="17" y2="14" stroke="var(--pergamino-claro)" stroke-width="1"/>
+            <line x1="11" y1="19" x2="17" y2="19" stroke="var(--pergamino-claro)" stroke-width="1"/>
+            <line x1="23" y1="14" x2="29" y2="14" stroke="var(--pergamino-claro)" stroke-width="1"/>
+            <line x1="23" y1="19" x2="29" y2="19" stroke="var(--pergamino-claro)" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3>Referencias bibliográficas</h3>
+        <span class="estado-tag">Luego cargaremos los enlaces</span>
+      </div>
+
     </div>
   </section>
 </main>
