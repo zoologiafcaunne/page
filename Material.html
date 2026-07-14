@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material de Estudio · Zoología Agrícola · FCA UNNE</title>
+<meta name="description" content="Material de estudio de la cátedra Zoología Agrícola, Facultad de Ciencias Agrarias, UNNE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta: #1B1B1B;
+    --negro: #141210;
+    --pergamino: #F5F6EF;
+    --pergamino-claro: #FFFFFF;
+    --musgo: #2E5D24;
+    --musgo-claro: #7CB342;
+    --verde-vivo: #4C8A32;
+    --linea: rgba(31,42,30,0.15);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--pergamino);
+    color: var(--tinta);
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3{
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    margin:0;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--musgo);
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* NAV */
+  header.site{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(239,233,218,0.94);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--linea);
+  }
+  nav.wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: 28px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  nav.wrap a{
+    font-family:'Bitter', serif;
+    font-weight:700;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--musgo);
+    transition: color .15s ease;
+  }
+  nav.wrap a.activo{ color: var(--tinta); }
+  nav.wrap a:hover{ color: var(--verde-vivo); }
+
+  /* HERO simple */
+  .hero{
+    padding: 56px 0 40px;
+    text-align: center;
+    border-top: none;
+  }
+  .hero h1{ font-size: clamp(1.8rem, 4vw, 2.6rem); }
+  .hero p.lede{
+    margin: 14px auto 0;
+    max-width: 52ch;
+    color: #3a3f33;
+  }
+
+  section{ padding: 40px 0 60px; }
+
+  /* Lista de unidades */
+  .unidades{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 700px){
+    .unidades{ grid-template-columns: 1fr; }
+  }
+  .unidad{
+    background: var(--pergamino-claro);
+    border: 2px solid var(--musgo);
+    border-radius: 16px;
+    padding: 22px 24px;
+  }
+  .unidad h3{
+    font-size: 1rem;
+    color: var(--musgo);
+    margin-bottom: 8px;
+  }
+  .unidad p{
+    margin: 0 0 12px;
+    font-size: 0.9rem;
+    color: #3a3f33;
+  }
+  .unidad .estado-tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pergamino-claro);
+    background: var(--musgo);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  footer{
+    border-top: 1px solid var(--linea);
+    padding: 30px 0 40px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--musgo);
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html">BIENVENIDOS</a>
+    <a href="material.html" class="activo">MATERIAL DE ESTUDIO</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Cátedra · FCA · UNNE</p>
+      <h1>Material de estudio</h1>
+      <p class="lede">Acá vamos a ir subiendo guías, resúmenes y demás material por unidad temática.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="unidades">
+
+        <div class="unidad">
+          <h3>Morfología externa</h3>
+          <p>Material próximamente disponible.</p>
+          <span class="estado-tag">Próximamente</span>
+        </div>
+
+        <div class="unidad">
+          <h3>Aparatos bucales</h3>
+          <p>Material próximamente disponible.</p>
+          <span class="estado-tag">Próximamente</span>
+        </div>
+
+        <div class="unidad">
+          <h3>Metamorfosis</h3>
+          <p>Material próximamente disponible.</p>
+          <span class="estado-tag">Próximamente</span>
+        </div>
+
+        <div class="unidad">
+          <h3>Plagas de cultivos</h3>
+          <p>Material próximamente disponible.</p>
+          <span class="estado-tag">Próximamente</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Zoología Agrícola — Facultad de Ciencias Agrarias, UNNE</span>
+    <span>Corrientes, Argentina</span>
+  </div>
+</footer>
+
+</body>
+</html>
