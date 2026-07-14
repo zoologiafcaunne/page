@@ -145,6 +145,60 @@
     object-fit: contain;
   }
 
+  /* CARRUSEL - franja continua de punta a punta */
+  .carrusel-franja{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--negro);
+    border-top: 1.5px solid var(--verde-vivo);
+    border-bottom: 1.5px solid var(--verde-vivo);
+    padding: 18px 0;
+  }
+  .carrusel-franja::before,
+  .carrusel-franja::after{
+    content:"";
+    position:absolute;
+    top:0; bottom:0;
+    width: 90px;
+    z-index: 2;
+    pointer-events:none;
+  }
+  .carrusel-franja::before{
+    left:0;
+    background: linear-gradient(90deg, var(--negro) 0%, transparent 100%);
+  }
+  .carrusel-franja::after{
+    right:0;
+    background: linear-gradient(270deg, var(--negro) 0%, transparent 100%);
+  }
+  .carrusel-pista{
+    display:flex;
+    align-items:center;
+    gap: 22px;
+    width: max-content;
+    animation: desfile 30s linear infinite;
+  }
+  .carrusel-pista .foto{
+    flex: 0 0 auto;
+    width: 190px;
+    height: 130px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(124,179,66,0.35);
+    background: var(--tinta);
+  }
+  .carrusel-pista .foto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+  }
+  @keyframes desfile{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
   /* SECTIONS */
   section{ padding: 54px 0; border-top: 1px solid var(--linea); }
   .section-head{ margin-bottom: 8px; text-align:center; }
@@ -329,6 +383,8 @@
     .avisos{ padding: 26px 22px; }
     .boton-mail{ right: 16px; bottom: 16px; width: 52px; height: 52px; }
     .boton-mail .tooltip{ display:none; }
+    .carrusel-pista .foto{ width: 130px; height: 90px; }
+    .carrusel-franja::before, .carrusel-franja::after{ width: 50px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -337,6 +393,7 @@
     .tarjeta{ transition:none; }
     .boton-mail{ transition:none; }
     .boton-mail:hover{ transform:none; }
+    .carrusel-pista{ animation-duration: 90s; }
   }
 </style>
 </head>
@@ -363,6 +420,26 @@
       </div>
     </div>
   </section>
+
+  <div class="carrusel-franja" aria-label="Galería de fotos de la cátedra">
+    <div class="carrusel-pista">
+      <div class="foto"><img src="1.png" alt="Zoología Agrícola - foto 1" loading="lazy"></div>
+      <div class="foto"><img src="2.png" alt="Zoología Agrícola - foto 2" loading="lazy"></div>
+      <div class="foto"><img src="3.png" alt="Zoología Agrícola - foto 3" loading="lazy"></div>
+      <div class="foto"><img src="4.png" alt="Zoología Agrícola - foto 4" loading="lazy"></div>
+      <div class="foto"><img src="5.png" alt="Zoología Agrícola - foto 5" loading="lazy"></div>
+      <div class="foto"><img src="6.png" alt="Zoología Agrícola - foto 6" loading="lazy"></div>
+      <div class="foto"><img src="7.png" alt="Zoología Agrícola - foto 7" loading="lazy"></div>
+      <!-- se repite el mismo set para que el desfile sea infinito y sin cortes -->
+      <div class="foto"><img src="1.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="2.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="3.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="4.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="5.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="6.png" alt="" aria-hidden="true" loading="lazy"></div>
+      <div class="foto"><img src="7.png" alt="" aria-hidden="true" loading="lazy"></div>
+    </div>
+  </div>
 
   <section class="tablero">
     <div class="wrap">
