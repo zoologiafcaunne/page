@@ -84,6 +84,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    gap: 28px;
     padding-top: 14px;
     padding-bottom: 14px;
   }
@@ -94,7 +95,11 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--musgo);
+    text-decoration: none;
+    transition: color .15s ease;
   }
+  .brand-central.activo{ color: var(--tinta); }
+  .brand-central:hover{ color: var(--verde-vivo); }
 
   /* HERO */
   .hero{
@@ -649,7 +654,8 @@
 
 <header class="site">
   <nav class="wrap">
-    <span class="brand-central">BIENVENIDOS</span>
+    <a href="index.html" class="brand-central activo">BIENVENIDOS</a>
+    <a href="material.html" class="brand-central">MATERIAL DE ESTUDIO</a>
   </nav>
 </header>
 
