@@ -199,6 +199,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     display:block;
     filter: saturate(1.08) contrast(1.04);
   }
@@ -446,6 +447,27 @@
     padding-left: 36px;
   }
   .modal-bloque ul{ list-style: none; }
+  .modal-bloque ol{
+    margin:0;
+    padding-left: 36px;
+    list-style: none;
+    counter-reset: paso;
+  }
+  .modal-bloque ol li{
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+    counter-increment: paso;
+  }
+  .modal-bloque ol li::before{
+    content: counter(paso) ".";
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--verde-vivo);
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
   .modal-bloque ul li{
     position: relative;
     padding-left: 18px;
@@ -711,17 +733,29 @@
     </div>
 
     <div class="modal-bloque">
-      <h3><span class="numero">3</span> Modalidad del examen</h3>
-      <p>Puede incluir una parte oral, escrita y/o práctica con reconocimiento de material (insectos, muestras, láminas). Vas a poder confirmar la modalidad exacta más cerca de la fecha de mesa.</p>
+      <h3><span class="numero">3</span> Cómo se desarrolla el examen</h3>
+      <ol>
+        <li>El alumno saca dos bolillas y elige una para rendir. Luego, de manera opcional, puede tomarse unos minutos para armar un breve esquema o resumen ("capilla") que le sirva para ordenar sus ideas antes de exponer.</li>
+        <li>Comienza la exposición oral: el alumno debe empezar por la parte general que le tocó en la bolilla (por ejemplo morfología externa, aparatos bucales, sistema reproductor, metamorfosis, etc.). Sobre ese tema, los profesores empiezan a hacer preguntas.</li>
+        <li>Las preguntas continúan sobre otros temas incluidos en la bolilla, que pueden seguir dentro de la parte general o avanzar hacia la parte de plagas.</li>
+        <li>Finalmente se pregunta sobre la parte de plagas que le tocó en la bolilla (por ejemplo plagas de soja, maíz, algodón, siembra directa, etc.). Si el alumno responde satisfactoriamente, aprueba el final.</li>
+      </ol>
     </div>
 
     <div class="modal-bloque">
-      <h3><span class="numero">4</span> Cómo repasar</h3>
+      <h3><span class="numero">4</span> Caja entomológica</h3>
+      <p>Debe estar visada y aprobada al finalizar la cursada. Como puede pasar más de un año hasta que el alumno rinda, no se exige que conserve todos los ejemplares originales, sino que mantenga la mayor cantidad posible en buen estado.</p>
+      <p>Tiene que presentarse limpia y prolija: si hay partes rotas, suciedad o ejemplares deteriorados, hay que retirarlos antes de rendir. Se valora que el alumno se haya tomado el trabajo de ordenarla y traer una caja presentable.</p>
+      <p><strong>Uso en la mesa de examen:</strong> el alumno puede utilizarla para explicar la morfología del orden que le tocó, o recurrir a los insectos y preparados como apoyo visual si se traba en alguna pregunta sobre morfología.</p>
+    </div>
+
+    <div class="modal-bloque">
+      <h3><span class="numero">5</span> Cómo repasar</h3>
       <p>Priorizá los ejes temáticos centrales de la cursada antes que repasar el programa completo de punta a punta. Acá vamos a ir sumando los bloques clave y bibliografía recomendada.</p>
     </div>
 
     <div class="modal-bloque">
-      <h3><span class="numero">5</span> Tips para el día</h3>
+      <h3><span class="numero">6</span> Tips para el día</h3>
       <ul>
         <li>Llegá con anticipación y confirmá el aula asignada.</li>
         <li>Si el examen es grupal u oral por orden, consultá cómo se arma la lista de exposición.</li>
