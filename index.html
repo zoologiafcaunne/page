@@ -271,9 +271,12 @@
   /* Tarjetas modernas unificadas (recomendaciones / bibliografía) */
   .tarjetas{
     display:grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
     margin-top: 44px;
+  }
+  @media (max-width: 980px){
+    .tarjetas{ grid-template-columns: 1fr 1fr; }
   }
   .tarjeta{
     position: relative;
@@ -348,6 +351,28 @@
   .tarjeta-ancha{
     max-width: 480px;
     margin: 44px auto 0;
+  }
+
+  /* Cartelito "Próximamente" iluminado, con los colores propios de la página */
+  .estado-tag.brilla{
+    position: relative;
+    background: var(--verde-vivo);
+    border-color: var(--verde-vivo);
+    animation: cartelito-prende 1.6s ease-in-out infinite;
+  }
+  @keyframes cartelito-prende{
+    0%, 100%{
+      box-shadow: 0 0 5px 1px rgba(76,138,50,0.55), 0 0 14px 3px rgba(154,205,78,0.35);
+      background: var(--verde-vivo);
+    }
+    50%{
+      box-shadow: 0 0 9px 3px rgba(154,205,78,0.85), 0 0 22px 7px rgba(154,205,78,0.5);
+      background: var(--musgo-claro);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .estado-tag.brilla{ animation: none; }
   }
 
   /* MODAL */
@@ -552,6 +577,47 @@
   }
   .boton-mail:hover .tooltip{ opacity:1; transform: translateX(0); }
 
+  /* BOTON FLOTANTE DE INSTAGRAM (misma paleta que el de mail) */
+  .boton-instagram{
+    position: fixed;
+    right: 26px;
+    bottom: 94px;
+    z-index: 50;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--musgo);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 10px 22px -8px rgba(31,42,30,0.55);
+    text-decoration:none;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .boton-instagram:hover{
+    background: var(--verde-vivo);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 14px 26px -8px rgba(31,42,30,0.6);
+  }
+  .boton-instagram svg{ width: 24px; height: 24px; }
+  .boton-instagram .tooltip{
+    position: absolute;
+    right: 70px;
+    background: var(--tinta);
+    color: var(--pergamino-claro);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    padding: 7px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity .18s ease, transform .18s ease;
+    pointer-events: none;
+  }
+  .boton-instagram:hover .tooltip{ opacity:1; transform: translateX(0); }
+
   @media (max-width: 860px){
     .hero .wrap{ grid-template-columns: 1fr; }
     .hero-art{ order:-1; }
@@ -563,6 +629,8 @@
     .avisos{ padding: 26px 22px; }
     .boton-mail{ right: 16px; bottom: 16px; width: 52px; height: 52px; }
     .boton-mail .tooltip{ display:none; }
+    .boton-instagram{ right: 16px; bottom: 78px; width: 52px; height: 52px; }
+    .boton-instagram .tooltip{ display:none; }
     .carrusel-pista .foto{ width: 190px; height: 155px; }
     .carrusel-franja::before, .carrusel-franja::after{ width: 50px; }
   }
@@ -685,6 +753,20 @@
           <h3>CURSADA 2027</h3>
           <span class="estado-tag">Próximamente</span>
         </div>
+
+        <div class="tarjeta">
+          <div class="icono">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="42" width="56" height="38" rx="7" fill="var(--verde-vivo)"/>
+              <rect x="22" y="42" width="56" height="13" rx="7" fill="var(--musgo)"/>
+              <rect x="39" y="29" width="22" height="15" rx="4" fill="none" stroke="var(--tinta)" stroke-width="3.2"/>
+              <circle cx="50" cy="61" r="4.2" fill="var(--pergamino-claro)"/>
+              <line x1="22" y1="55" x2="78" y2="55" stroke="var(--tinta)" stroke-width="1" opacity="0.35"/>
+            </svg>
+          </div>
+          <h3>BOLSA DE PASANTÍAS</h3>
+          <span class="estado-tag brilla">Próximamente</span>
+        </div>
       </div>
 
       <div class="tarjeta musgo-tema tarjeta-ancha">
@@ -758,6 +840,15 @@
     <span>Corrientes, Argentina</span>
   </div>
 </footer>
+
+<a class="boton-instagram" href="https://www.instagram.com/zoologiaunne/" target="_blank" rel="noopener" aria-label="Seguinos en Instagram">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="3" width="18" height="18" rx="5" stroke="var(--pergamino-claro)" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4.2" stroke="var(--pergamino-claro)" stroke-width="1.8"/>
+    <circle cx="17.2" cy="6.8" r="1.1" fill="var(--pergamino-claro)"/>
+  </svg>
+  <span class="tooltip">Seguinos</span>
+</a>
 
 <a class="boton-mail" href="https://mail.google.com/mail/?view=cm&fs=1&to=zoologiaunne@gmail.com" target="_blank" rel="noopener" aria-label="Escribinos por mail">
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
