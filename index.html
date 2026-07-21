@@ -202,23 +202,23 @@
   }
   .hero-art .marco{
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     aspect-ratio: 1/1;
-    border-radius: 50%;
-    background: radial-gradient(circle at 42% 38%, #ffffff, var(--verde-nube) 72%);
-    border: 1px solid rgba(76,122,61,0.28);
-    box-shadow: 0 16px 50px -18px rgba(76,122,61,0.35), inset 0 0 24px rgba(76,122,61,0.06);
+    border-radius: 28px;
+    background: transparent;
+    border: 1px solid rgba(76,122,61,0.18);
+    box-shadow: 0 16px 50px -18px rgba(76,122,61,0.25);
     display:flex;
     align-items:center;
     justify-content:center;
-    padding: 24px;
+    padding: 0;
     overflow: hidden;
   }
   .hero-art .marco img,
   .hero-art .marco svg{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
   .hero-art .creditos{
     font-family: 'IBM Plex Mono', monospace;
@@ -387,6 +387,7 @@
     border-bottom: 1px solid var(--linea);
   }
   .tarjeta-media svg{ width: 72px; height: 72px; }
+  .tarjeta-media img{ max-width: 96px; max-height: 96px; width: auto; height: auto; object-fit: contain; }
   .tarjeta.musgo-tema .tarjeta-media{ background: linear-gradient(160deg, #DCEAD3, var(--pergamino-claro)); }
   .tarjeta-cuerpo{ padding: 18px 22px 22px; }
   .tarjeta.musgo-tema{ border-color: rgba(76,122,61,0.4); }
@@ -429,11 +430,6 @@
   .tarjeta.tarjeta-clickeable:focus-visible{
     outline: 2px solid var(--verde-vivo);
     outline-offset: 3px;
-  }
-
-  .tarjeta-ancha{
-    max-width: 480px;
-    margin: 44px auto 0;
   }
 
   /* Cartelito "Próximamente" con los colores propios de la página */
@@ -816,20 +812,7 @@
       <div class="tarjetas">
         <div class="tarjeta tarjeta-clickeable" onclick="abrirModal('modal-examenes')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')abrirModal('modal-examenes')">
           <div class="tarjeta-media">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <path d="M50,32 C34,37 26,58 33,82 C40,93 48,90 50,82 Z" fill="var(--musgo-claro)" opacity="0.55"/>
-              <path d="M50,32 C66,37 74,58 67,82 C60,93 52,90 50,82 Z" fill="var(--musgo-claro)" opacity="0.55"/>
-              <line x1="50" y1="32" x2="50" y2="84" stroke="var(--tinta)" stroke-width="1" opacity="0.5"/>
-              <path d="M40,40 L26,36 M42,52 L24,54 M46,72 L34,84" stroke="var(--tinta)" stroke-width="2" stroke-linecap="round" fill="none"/>
-              <path d="M60,40 L74,36 M58,52 L76,54 M54,72 L66,84" stroke="var(--tinta)" stroke-width="2" stroke-linecap="round" fill="none"/>
-              <circle cx="50" cy="24" r="15" fill="var(--musgo)"/>
-              <path d="M43,14 C40,8 35,5 31,5" stroke="var(--tinta)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <path d="M57,14 C60,8 65,5 69,5" stroke="var(--tinta)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <circle cx="42" cy="22" r="4.6" fill="var(--tinta)"/>
-              <circle cx="58" cy="22" r="4.6" fill="var(--tinta)"/>
-              <circle cx="40.5" cy="20.5" r="1.3" fill="var(--pergamino-claro)"/>
-              <circle cx="56.5" cy="20.5" r="1.3" fill="var(--pergamino-claro)"/>
-            </svg>
+            <img src="A1.png" alt="Exámenes finales">
           </div>
           <div class="tarjeta-cuerpo">
             <h3>EXÁMENES FINALES</h3>
@@ -842,18 +825,7 @@
 
         <div class="tarjeta">
           <div class="tarjeta-media">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="63" cy="53" rx="27" ry="21" fill="var(--verde-vivo)"/>
-              <circle cx="41" cy="46" r="12.5" fill="var(--verde-vivo)"/>
-              <path d="M34,40 C20,42 8,52 4,64 C7,66 11,64 15,60 C24,51 31,45 37,43 Z" fill="var(--verde-vivo)"/>
-              <circle cx="6" cy="65" r="1.6" fill="var(--tinta)"/>
-              <path d="M18,48 L13,36 L20,29" stroke="var(--tinta)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-              <ellipse cx="21" cy="27" rx="3.2" ry="2.2" fill="var(--tinta)"/>
-              <path d="M62,34 C60,44 60,62 62,71" stroke="var(--tinta)" stroke-width="1" opacity="0.45" fill="none"/>
-              <circle cx="42" cy="44" r="3.6" fill="var(--tinta)"/>
-              <circle cx="40.8" cy="42.8" r="1.1" fill="var(--pergamino-claro)"/>
-              <path d="M47,64 L41,76 L47,84 M59,68 L55,82 L61,90 M75,66 L79,80 L73,88" stroke="var(--tinta)" stroke-width="2" stroke-linecap="round" fill="none"/>
-            </svg>
+            <img src="A2.png" alt="Cursada 2027">
           </div>
           <div class="tarjeta-cuerpo">
             <h3>CURSADA 2027</h3>
@@ -866,13 +838,7 @@
 
         <div class="tarjeta">
           <div class="tarjeta-media">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <rect x="22" y="42" width="56" height="38" rx="7" fill="var(--verde-vivo)"/>
-              <rect x="22" y="42" width="56" height="13" rx="7" fill="var(--musgo)"/>
-              <rect x="39" y="29" width="22" height="15" rx="4" fill="none" stroke="var(--tinta)" stroke-width="3.2"/>
-              <circle cx="50" cy="61" r="4.2" fill="var(--pergamino-claro)"/>
-              <line x1="22" y1="55" x2="78" y2="55" stroke="var(--tinta)" stroke-width="1" opacity="0.35"/>
-            </svg>
+            <img src="A3.png" alt="Bolsa de pasantías">
           </div>
           <div class="tarjeta-cuerpo">
             <h3>BOLSA DE PASANTÍAS</h3>
@@ -880,28 +846,6 @@
             <div class="tarjeta-pie">
               <span class="estado-tag brilla">Próximamente</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tarjeta musgo-tema tarjeta-ancha">
-        <div class="tarjeta-media">
-          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 8 H20 V32 H8 Z" fill="var(--musgo)"/>
-            <path d="M32 8 H20 V32 H32 Z" fill="var(--musgo-claro)"/>
-            <path d="M8 8 C12 6, 16 6, 20 8" stroke="var(--tinta)" stroke-width="1.3" fill="none"/>
-            <path d="M32 8 C28 6, 24 6, 20 8" stroke="var(--tinta)" stroke-width="1.3" fill="none"/>
-            <line x1="11" y1="14" x2="17" y2="14" stroke="var(--pergamino-claro)" stroke-width="1"/>
-            <line x1="11" y1="19" x2="17" y2="19" stroke="var(--pergamino-claro)" stroke-width="1"/>
-            <line x1="23" y1="14" x2="29" y2="14" stroke="var(--pergamino-claro)" stroke-width="1"/>
-            <line x1="23" y1="19" x2="29" y2="19" stroke="var(--pergamino-claro)" stroke-width="1"/>
-          </svg>
-        </div>
-        <div class="tarjeta-cuerpo">
-          <h3>Referencias bibliográficas</h3>
-          <p class="tarjeta-desc">Bibliografía obligatoria y complementaria de la materia, en preparación.</p>
-          <div class="tarjeta-pie">
-            <span class="estado-tag">Próximamente</span>
           </div>
         </div>
       </div>
