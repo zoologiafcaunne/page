@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metamorfosis · Material de Estudio · Zoología Agrícola FCA UNNE</title>
+<meta name="description" content="Apunte de estudio sobre la evolución de la metamorfosis en insectos, cátedra Zoología Agrícola, FCA UNNE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa: #FFD9E8;
+    --rosa-fuerte: #F492B7;
+    --azul: #CDE7FA;
+    --azul-fuerte: #7FB8E0;
+    --amarillo: #FFF1AE;
+    --amarillo-fuerte: #F4D35E;
+    --menta: #D6F5E3;
+    --menta-fuerte: #8FD9B6;
+    --tinta: #4a4458;
+    --tinta-suave: #6b6478;
+    --papel: #FFFDF8;
+    --papel-crema: #FFF9EF;
+    --linea: rgba(74,68,88,0.12);
+    --sombra: 0 6px 18px rgba(150,120,150,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--papel-crema);
+    background-image:
+      radial-gradient(circle at 10% 15%, rgba(255,217,232,0.35), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(205,231,250,0.4), transparent 40%),
+      radial-gradient(circle at 50% 90%, rgba(255,241,174,0.3), transparent 45%);
+    color: var(--tinta);
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* NAV — se mantiene consistente con el resto del sitio */
+  header.site{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,253,248,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--linea);
+  }
+  nav.wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: 28px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  nav.wrap a{
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+    transition: color .15s ease;
+  }
+  nav.wrap a.activo{ color: var(--rosa-fuerte); }
+  nav.wrap a:hover{ color: var(--azul-fuerte); }
+
+  /* HERO */
+  .hero{
+    padding: 52px 0 20px;
+    text-align: center;
+  }
+  .hero .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rosa-fuerte);
+  }
+  .hero h1{
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    margin-top: 10px;
+    color: var(--tinta);
+  }
+  .hero .accent{
+    font-family: 'Caveat', cursive;
+    font-size: 1.4em;
+    color: var(--azul-fuerte);
+  }
+  .hero p.lede{
+    margin: 16px auto 0;
+    max-width: 55ch;
+    color: var(--tinta-suave);
+    font-size: 1.05rem;
+  }
+
+  /* separador */
+  .sep{
+    text-align:center;
+    color: var(--rosa-fuerte);
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    margin: 38px 0;
+    opacity: 0.7;
+  }
+
+  section.capitulo{ padding: 10px 0 10px; }
+
+  /* Título de capítulo con resaltador */
+  .titulo-cap{
+    display:inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    padding: 2px 14px 6px;
+    border-radius: 6px 16px 6px 16px;
+  }
+  .titulo-cap.rosa{ background: var(--rosa); }
+  .titulo-cap.azul{ background: var(--azul); }
+  .titulo-cap.amarillo{ background: var(--amarillo); }
+  .titulo-cap.menta{ background: var(--menta); }
+
+  .cuento p{
+    font-size: 1.02rem;
+    color: var(--tinta);
+    margin: 0 0 16px;
+  }
+
+  mark{
+    padding: 1px 5px;
+    border-radius: 5px;
+    background: linear-gradient(180deg, transparent 55%, var(--mark-color, var(--amarillo)) 55%);
+  }
+  mark.m-rosa{ --mark-color: var(--rosa); }
+  mark.m-azul{ --mark-color: var(--azul); }
+  mark.m-menta{ --mark-color: var(--menta); }
+
+  /* recuadro para recordar */
+  .nota{
+    background: var(--papel);
+    border: 2px dashed var(--azul-fuerte);
+    border-radius: 18px;
+    padding: 16px 20px;
+    margin: 22px 0;
+    box-shadow: var(--sombra);
+    position: relative;
+  }
+  .nota.rosa{ border-color: var(--rosa-fuerte); }
+  .nota.amarillo{ border-color: var(--amarillo-fuerte); }
+  .nota .tag{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--tinta);
+    margin-bottom: 6px;
+    display:block;
+  }
+  .nota p{ margin:0; font-size: 0.95rem; color: var(--tinta-suave); }
+  .nota ul{ margin: 6px 0 0; padding-left: 20px; font-size: 0.95rem; color: var(--tinta-suave); }
+
+  /* washi tape decorativo */
+  .washi{
+    position:absolute;
+    top: -10px;
+    left: 24px;
+    width: 60px;
+    height: 20px;
+    background: repeating-linear-gradient(45deg, var(--rosa), var(--rosa) 6px, var(--amarillo) 6px, var(--amarillo) 12px);
+    opacity: 0.85;
+    transform: rotate(-4deg);
+    border-radius: 3px;
+  }
+
+  /* ejemplos tipo fichas */
+  .fichas{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 18px 0 26px;
+  }
+  .ficha{
+    background: var(--papel);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: var(--sombra);
+    border-top: 5px solid var(--menta-fuerte);
+  }
+  .ficha.rosa{ border-top-color: var(--rosa-fuerte); }
+  .ficha.azul{ border-top-color: var(--azul-fuerte); }
+  .ficha.amarillo{ border-top-color: var(--amarillo-fuerte); }
+  .ficha .emoji{ font-size: 1.4rem; }
+  .ficha h4{
+    font-family:'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    margin: 6px 0 2px;
+    color: var(--tinta);
+  }
+  .ficha p{ margin:0; font-size: 0.82rem; color: var(--tinta-suave); font-style: italic; }
+
+  /* quiz */
+  .quiz{
+    background: var(--papel);
+    border-radius: 20px;
+    padding: 22px 24px;
+    box-shadow: var(--sombra);
+    margin: 30px 0;
+  }
+  .quiz h3{ font-size: 1.15rem; margin-bottom: 12px; color: var(--tinta); }
+  .quiz ol{ margin:0; padding-left: 20px; }
+  .quiz li{ margin-bottom: 10px; font-size: 0.98rem; color: var(--tinta-suave); }
+
+  /* tabla comparativa */
+  table.comparativa{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin: 20px 0 10px;
+  }
+  table.comparativa th{
+    text-align:left;
+    font-family:'Quicksand', sans-serif;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--tinta-suave);
+    padding: 0 14px 6px;
+  }
+  table.comparativa td{
+    background: var(--papel);
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    color: var(--tinta);
+    box-shadow: var(--sombra);
+  }
+  table.comparativa tr td:first-child{ border-radius: 12px 0 0 12px; font-weight: 700; }
+  table.comparativa tr td:last-child{ border-radius: 0 12px 12px 0; }
+
+  .estado-pendiente{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tinta);
+    background: var(--amarillo);
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin: 8px 0 30px;
+  }
+
+  footer{
+    border-top: 1px solid var(--linea);
+    padding: 30px 0 40px;
+    margin-top: 40px;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--tinta-suave);
+  }
+
+  @media (max-width: 600px){
+    .hero{ padding: 40px 0 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html">BIENVENIDOS</a>
+    <a href="material.html" class="activo">MATERIAL DE ESTUDIO</a>
+    <a href="consultas.html">CLASES DE CONSULTA</a>
+    <a href="caja.html">CAJA ENTOMOLÓGICA</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero wrap">
+    <p class="eyebrow">Apunte de cátedra · Zoología Agrícola</p>
+    <h1>🦋 Metamorfosis <span class="accent">de insectos</span> ✨</h1>
+    <p class="lede">La historia de cómo unos bichitos anónimos del suelo se convirtieron en el grupo de animales terrestres más dominante del planeta.</p>
+  </section>
+
+  <div class="wrap">
+
+    <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
+
+    <section class="capitulo cuento">
+      <h2 class="titulo-cap rosa">🌸 ¿Qué es la metamorfosis?</h2>
+      <p>
+        Es simplemente la <mark class="m-rosa">sucesión de cambios y transformaciones</mark> que atraviesa un insecto desde que sale del huevo hasta que llega a ser adulto.
+      </p>
+      <p>
+        No todos los insectos viven esta historia de la misma manera. Hay unos pocos que directamente se la saltearon, y otros que la vivieron con distinta intensidad. Eso nos permite separarlos en dos grandes grupos: los que no cambian nada (<mark class="m-azul">ametábolos</mark>) y los que sí cambian (<mark class="m-azul">metábolos</mark>). Y dentro de estos últimos, todavía hay tres formas distintas de vivir esa transformación: incompleta, intermedia y completa.
+      </p>
+
+      <div class="nota">
+        <span class="washi"></span>
+        <span class="tag">📌 Para recordar</span>
+        <p>Metamorfosis = cambios desde el huevo hasta el adulto.<br>
+        AMETÁBOLOS (sin cambios) vs. METÁBOLOS (con cambios: incompleta / intermedia / completa)</p>
+      </div>
+    </section>
+
+    <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
+
+    <section class="capitulo cuento">
+      <h2 class="titulo-cap azul">💭 Capítulo 1 — Había una vez un insecto que no cambiaba nunca</h2>
+      <p>
+        Nacía del huevo y ya era, básicamente, una versión mini de sí mismo. Con el correr de las mudas iba creciendo en tamaño, nomás. Nada de alas, nada de transformaciones dramáticas: el mismo bicho, cada vez más grande. A este grupo lo llamamos <mark class="m-azul">ametábolos</mark>, y son ápteros, es decir, no tienen alas.
+      </p>
+      <p>
+        Pero acá viene lo interesante: la historia evolutiva cuenta que estos insectos, en sus comienzos, sí tenían unos pequeños esbozos articulados en el cuerpo. No eran alas todavía, pero les servían para algo crucial: planear un poco y esquivar a los depredadores que los acechaban desde el suelo. Ese pequeño truco de supervivencia fue, sin saberlo, la semilla de algo mucho más grande. Porque esos esbozos no alcanzaban, y la presión de seguir vivos empujó a la evolución a seguir de largo: había que desarrollar alas de verdad, y con ellas, destreza real en el vuelo.
+      </p>
+      <p>
+        Hoy en día todavía podemos ver representantes vivos de ese primer capítulo de la historia: literalmente, un fósil viviente de cómo eran los insectos antes de que la metamorfosis existiera. Eso sí: para la agricultura, este grupo no representa ningún problema ni beneficio directo. Son testigos del pasado, no protagonistas del presente agronómico.
+      </p>
+
+      <div class="fichas">
+        <div class="ficha azul">
+          <span class="emoji">🦋</span>
+          <h4>Zygentoma</h4>
+          <p>Pececillos de plata / lepismátidos — ej. <em>Lepisma saccharina</em></p>
+        </div>
+        <div class="ficha menta">
+          <span class="emoji">🦋</span>
+          <h4>Archaeognatha</h4>
+          <p>Petezuelas saltarinas ("bristletails")</p>
+        </div>
+      </div>
+
+      <div class="nota amarillo">
+        <span class="washi" style="background: repeating-linear-gradient(45deg, var(--azul), var(--azul) 6px, var(--menta) 6px, var(--menta) 12px);"></span>
+        <span class="tag">🌿 Importancia agronómica</span>
+        <p>Ninguna. Los ametábolos no son plaga ni tienen relevancia productiva directa.</p>
+      </div>
+
+      <p style="font-size:0.9rem; color:var(--tinta-suave); font-style:italic;">
+        ✏️ ¿Podés explicar por qué a los ametábolos no se los considera insectos con metamorfosis, aunque sí muden varias veces?
+      </p>
+    </section>
+
+    <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
+
+    <section class="capitulo cuento">
+      <h2 class="titulo-cap amarillo">🌿 Capítulo 2 — Cuando las alas verdaderas empezaron a aparecer</h2>
+      <p>
+        Una vez que las alas verdaderas empezaron a aparecer, algo tenía que cambiar en la forma en que estos insectos se desarrollaban. Y así nació el siguiente capítulo: la <mark>metamorfosis incompleta</mark>.
+      </p>
+      <p>
+        Estos insectos ya no nacían siendo una copia exacta del adulto: iban a ir cambiando de a poco, desarrollando alas, aumentando de tamaño, hasta cambiando de color. Pero tenían una particularidad clave: dentro del huevo, el embrión se tomaba su tiempo. Se desarrollaba muy bien, muy completo, antes de salir al mundo. Por eso, cuando por fin eclosionaban, ya venían con cabeza, tórax y abdomen bien diferenciados, pareciéndose muchísimo al adulto desde el primer día. Por esta razón los llamamos insectos <mark class="m-menta">ortogénicos</mark>.
+      </p>
+      <p>
+        Pensemos en una langosta. Una hembra se aparea con un macho, y de ahí surgen los huevos. Adentro de cada huevo, el embrión de la langosta se toma su tiempo —mucho más que un insecto de metamorfosis completa— para armar bien su cuerpito. Por eso, cuando nace, ya es difícil distinguir a una langosta bebé de una adulta a simple vista.
+      </p>
+
+      <div class="nota">
+        <span class="washi"></span>
+        <span class="tag">📌 Para recordar</span>
+        <p>3 fases: <strong>HUEVO → NINFA → ADULTO</strong><br>
+        La <strong>ninfa</strong> es el estado juvenil, muy parecido al adulto, que todavía debe terminar de desarrollar alas, tamaño y órganos sexuales.<br>
+        Pasa por estadios (ninfa 1, ninfa 2… generalmente 5) separados por mudas.</p>
+      </div>
+
+      <p>
+        En esta parte de la historia aparecen protagonistas muy conocidos en el campo:
+      </p>
+
+      <div class="fichas">
+        <div class="ficha rosa">
+          <span class="emoji">🦗</span>
+          <h4>Orthoptera</h4>
+          <p>Langostas, tucuras — <em>Schistocerca cancellata</em></p>
+        </div>
+        <div class="ficha azul">
+          <span class="emoji">🐛</span>
+          <h4>Hemiptera</h4>
+          <p>Chinches, pulgones, chicharras — <em>Nezara viridula</em></p>
+        </div>
+        <div class="ficha menta">
+          <span class="emoji">🙏</span>
+          <h4>Mantodea</h4>
+          <p>Mantis religiosa</p>
+        </div>
+        <div class="ficha amarillo">
+          <span class="emoji">🌿</span>
+          <h4>Phasmatodea</h4>
+          <p>Bicho palo</p>
+        </div>
+        <div class="ficha azul">
+          <span class="emoji">🎏</span>
+          <h4>Odonata</h4>
+          <p>Alguaciles y libélulas — ninfas acuáticas ("náyades")</p>
+        </div>
+      </div>
+
+      <p>
+        Pero esta forma de vivir la metamorfosis tenía un problema, una especie de talón de Aquiles evolutivo: como la ninfa se parece tanto al adulto, ambos terminan compartiendo el mismo nicho y compitiendo por el mismo recurso. Si vas a un lote de soja y encontrás chinches, vas a ver ahí, todos juntos, revolviéndose por la misma planta: huevos, ninfa 1, ninfa 2... hasta ninfa 5, y los adultos. Todos comiendo lo mismo, todos compitiendo por lo mismo.
+      </p>
+      <p>
+        Y ese conflicto —esa competencia interna entre generaciones de la misma especie— fue, ni más ni menos, la presión que empujó a la evolución hacia el próximo gran capítulo: separar las funciones. Que los jóvenes se dediquen exclusivamente a comer y acumular reservas, y que los adultos se dediquen a dispersarse y reproducirse. Y así llegaron los insectos de <mark class="m-rosa">metamorfosis completa</mark>...
+      </p>
+
+      <p style="font-size:0.9rem; color:var(--tinta-suave); font-style:italic;">
+        ✏️ ¿Podés explicar por qué a las ninfas y adultos de metamorfosis incompleta les cuesta compartir el mismo cultivo?
+      </p>
+    </section>
+
+    <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
+
+    <table class="comparativa">
+      <thead>
+        <tr><th>Grupo</th><th>Fases</th><th>Ejemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🌱 Ametábolos</td><td>Huevo → Juvenil (= adulto mini) → Adulto</td><td>Lepisma saccharina</td></tr>
+        <tr><td>🦗 Met. incompleta</td><td>Huevo → Ninfa (1-5) → Adulto</td><td>Schistocerca cancellata</td></tr>
+      </tbody>
+    </table>
+
+    <span class="estado-pendiente">🌷 Metamorfosis intermedia y completa — próximamente</span>
+
+    <div class="quiz">
+      <h3>💭 Mini quiz para repasar</h3>
+      <ol>
+        <li>¿Cuál es la diferencia central entre un insecto ametábolo y uno con metamorfosis incompleta?</li>
+        <li>¿Por qué se dice que los insectos de metamorfosis incompleta son "ortogénicos"?</li>
+        <li>Nombrá dos órdenes de importancia agronómica dentro de la metamorfosis incompleta y un ejemplo de cada uno.</li>
+        <li>¿Qué desventaja evolutiva tienen la ninfa y el adulto al compartir el mismo nicho?</li>
+      </ol>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Zoología Agrícola — Facultad de Ciencias Agrarias, UNNE</span>
+    <span>Corrientes, Argentina</span>
+  </div>
+</footer>
+
+</body>
+</html>
