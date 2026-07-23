@@ -110,10 +110,12 @@
     .unidades{ grid-template-columns: 1fr; }
   }
   .unidad{
+    display: block;
     background: var(--pergamino-claro);
     border: 2px solid var(--musgo);
     border-radius: 16px;
     padding: 22px 24px;
+    transition: transform .15s ease, box-shadow .15s ease;
   }
   .unidad h3{
     font-size: 1rem;
@@ -135,6 +137,11 @@
     background: var(--musgo);
     padding: 4px 12px;
     border-radius: 999px;
+  }
+  a.unidad:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(46,93,36,0.18);
+    cursor: pointer;
   }
 
   footer{
@@ -188,11 +195,11 @@
           <span class="estado-tag">Próximamente</span>
         </div>
 
-        <div class="unidad">
+        <a class="unidad" href="metamorfosis.html">
           <h3>Metamorfosis</h3>
-          <p>Material próximamente disponible.</p>
-          <span class="estado-tag">Próximamente</span>
-        </div>
+          <p>Ver el material disponible sobre metamorfosis.</p>
+          <span class="estado-tag">Disponible</span>
+        </a>
 
         <div class="unidad">
           <h3>Plagas de cultivos</h3>
