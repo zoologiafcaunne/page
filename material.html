@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metamorfosis · Material de Estudio · Zoología Agrícola FCA UNNE</title>
-<meta name="description" content="Apunte de estudio sobre la evolución de la metamorfosis en insectos, cátedra Zoología Agrícola, FCA UNNE.">
+<title>Material de Estudio · Zoología Agrícola FCA UNNE</title>
+<meta name="description" content="Apuntes de estudio de la cátedra Zoología Agrícola, FCA UNNE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -32,8 +32,7 @@
   body{
     margin:0;
     background: var(--papel-crema);
-    background-image:
-      radial-gradient(circle, rgba(54,65,84,0.10) 1px, transparent 1.4px);
+    background-image: radial-gradient(circle, rgba(54,65,84,0.10) 1px, transparent 1.4px);
     background-size: 22px 22px;
     color: var(--tinta);
     font-family: 'Nunito', sans-serif;
@@ -41,401 +40,240 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,h2,h3{
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 700;
-    margin: 0;
-  }
-
+  h1,h2,h3{ font-family: 'Baloo 2', sans-serif; font-weight: 700; margin: 0; }
   a{ color: inherit; text-decoration: none; }
-
-  .wrap{
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
+  .wrap{ max-width: 860px; margin: 0 auto; padding: 0 24px; }
   img{ max-width: 100%; display:block; border-radius: 14px; }
-
-  /* BARRA DE PROGRESO */
-  #progreso{
-    position: fixed;
-    top: 0; left: 0;
-    height: 4px;
-    width: 0%;
-    background: linear-gradient(90deg, var(--celeste-fuerte), var(--naranja-fuerte));
-    z-index: 50;
-    transition: width .1s linear;
-  }
 
   /* NAV */
   header.site{
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky; top: 0; z-index: 10;
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--linea);
   }
   nav.wrap{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap: 28px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    flex-wrap: wrap;
+    display:flex; justify-content:center; align-items:center;
+    gap: 28px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap;
   }
   nav.wrap a{
-    font-family:'Quicksand', sans-serif;
-    font-weight:700;
-    font-size: 0.95rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--tinta-suave);
+    font-family:'Quicksand', sans-serif; font-weight:700; font-size: 0.95rem;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--tinta-suave);
     transition: color .15s ease;
   }
   nav.wrap a.activo{ color: var(--naranja-fuerte); }
   nav.wrap a:hover{ color: var(--celeste-osc); }
 
-  /* MINI-INDICE */
-  .indice{
-    display:flex;
-    justify-content:center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 26px 0 6px;
-  }
-  .indice a{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.03em;
-    padding: 7px 14px;
-    border-radius: 999px;
-    background: var(--papel);
-    box-shadow: var(--sombra);
-    color: var(--tinta-suave);
-    transition: transform .15s ease, color .15s ease;
-    border: 1.5px solid var(--celeste-med);
-  }
-  .indice a:nth-child(even){ border-color: var(--naranja-med); }
-  .indice a:hover{ transform: translateY(-2px); color: var(--naranja-fuerte); }
-
   /* HERO */
   .hero-box{
-    position: relative;
-    margin: 34px 0 6px;
-    padding: 38px 30px 30px;
-    background: var(--papel);
-    border: 2.5px solid var(--celeste-fuerte);
-    border-radius: 26px;
-    text-align: center;
-    box-shadow: var(--sombra);
-    overflow: hidden;
+    position: relative; margin: 34px 0 6px; padding: 38px 30px 30px;
+    background: var(--papel); border: 2.5px solid var(--celeste-fuerte);
+    border-radius: 26px; text-align: center; box-shadow: var(--sombra); overflow: hidden;
   }
   .hero-box .rama{ position:absolute; width: 90px; opacity: 0.9; }
   .hero-box .rama.tl{ top: -10px; left: -14px; transform: rotate(-8deg); }
   .hero-box .rama.br{ bottom: -10px; right: -14px; transform: rotate(172deg); }
   .hero .eyebrow{
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--naranja-fuerte);
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--naranja-fuerte);
   }
-  .hero-box h1{
-    font-size: clamp(2rem, 5vw, 2.9rem);
-    margin-top: 10px;
-    color: var(--celeste-osc);
-  }
+  .hero-box h1{ font-size: clamp(1.9rem, 5vw, 2.6rem); margin-top: 10px; color: var(--celeste-osc); }
   .hero-box .subrayado{ width: 220px; max-width: 60%; margin: 6px auto 0; display:block; }
-  .hero-box p.lede{
-    margin: 16px auto 0;
-    max-width: 55ch;
-    color: var(--tinta-suave);
-    font-size: 1.05rem;
-  }
+  .hero-box p.lede{ margin: 16px auto 0; max-width: 55ch; color: var(--tinta-suave); font-size: 1.05rem; }
 
-  /* RESUMEN EXPRESS */
-  .express{
-    background: var(--celeste);
+  /* TARJETAS DE MATERIAL */
+  .tarjetas-material{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 40px 0 20px;
+  }
+  @media (max-width: 900px){ .tarjetas-material{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px){ .tarjetas-material{ grid-template-columns: 1fr; } }
+
+  .tarjeta-material{
+    background: var(--papel);
     border: 2px solid var(--celeste-med);
     border-radius: 22px;
-    padding: 20px 24px;
-    margin: 26px 0 18px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    display:flex;
+    flex-direction:column;
+    transition: transform .18s ease, border-color .18s ease;
   }
-  .express .tag{
-    font-family:'Baloo 2', sans-serif;
-    font-weight:700;
-    font-size: 0.95rem;
-    color: var(--celeste-osc);
-    display:block;
-    margin-bottom: 10px;
+  .tarjeta-material:hover{ transform: translateY(-4px); border-color: var(--celeste-fuerte); }
+  .tarjeta-material.clickeable{ cursor:pointer; }
+  .tarjeta-material.clickeable:focus-visible{ outline:2px solid var(--celeste-fuerte); outline-offset:3px; }
+  .tarjeta-material .tm-media{
+    height:150px;
+    background: linear-gradient(160deg, var(--celeste), var(--papel-crema));
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--linea);
+    overflow:hidden;
   }
-  .express ul{
-    margin:0; padding-left: 20px;
-    display:grid; gap: 6px;
-    font-size: 0.94rem;
-    color: var(--tinta);
+  .tarjeta-material .tm-media img{ width:100%; height:100%; object-fit:cover; border-radius:0; }
+  .tarjeta-material .tm-cuerpo{ padding:18px 20px 20px; display:flex; flex-direction:column; flex:1; }
+  .tarjeta-material h3{ font-size:1.05rem; color: var(--celeste-osc); margin-bottom:8px; }
+  .tarjeta-material.naranja-tema h3{ color: var(--naranja-osc); }
+  .tarjeta-material p.tm-desc{ font-size:0.86rem; color: var(--tinta-suave); margin:0 0 16px; flex:1; }
+  .tarjeta-material .tm-pie{ display:flex; justify-content:flex-end; }
+  .tarjeta-material .tm-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:0.66rem;
+    letter-spacing:0.08em; text-transform:uppercase; color:#fff;
+    background: var(--celeste-fuerte); padding:6px 14px; border-radius:999px; font-weight:600;
   }
+  .tarjeta-material.naranja-tema .tm-tag{ background: var(--naranja-fuerte); }
+  .tm-tag.brilla{ position:relative; animation: tm-prende 1.6s ease-in-out infinite; }
+  @keyframes tm-prende{
+    0%,100%{ box-shadow:0 0 5px 1px rgba(240,144,74,0.4), 0 0 12px 3px rgba(240,144,74,0.2); }
+    50%{ box-shadow:0 0 9px 3px rgba(240,144,74,0.6), 0 0 20px 8px rgba(240,144,74,0.35); }
+  }
+  @media (prefers-reduced-motion: reduce){ .tm-tag.brilla{ animation:none; } }
+
+  /* MODAL */
+  .modal-overlay{
+    display:none; position: fixed; inset:0;
+    background: rgba(54,65,84,0.45); z-index: 100;
+    align-items: center; justify-content: center; padding: 24px;
+  }
+  .modal-overlay.abierto{ display:flex; }
+  .modal-caja{
+    position: relative; background: var(--papel);
+    border: 1px solid var(--celeste-med); border-radius: 22px;
+    max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto;
+    padding: 40px 34px 34px;
+    box-shadow: 0 24px 60px -24px rgba(54,65,84,0.35);
+  }
+  .modal-caja.ancha{ max-width: 900px; }
+  .modal-caja::before{
+    content:""; position: sticky; top:0; display:block; height: 6px;
+    margin: -40px -34px 0; z-index:2;
+    background: linear-gradient(90deg, var(--celeste-fuerte), var(--naranja-fuerte));
+  }
+  #progreso-modal{
+    position: sticky; top: 6px; height: 3px; width:0%;
+    background: var(--naranja-fuerte); z-index:2; margin-bottom: 22px;
+    transition: width .1s linear;
+  }
+  .modal-cerrar{
+    position: absolute; top: 18px; right: 18px; width: 34px; height: 34px;
+    border-radius: 50%; border: 1px solid var(--linea); background: var(--papel-crema);
+    color: var(--tinta); font-size: 1.1rem; line-height: 1; cursor: pointer;
+    display:flex; align-items:center; justify-content:center; z-index:3;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .modal-cerrar:hover{ background: var(--celeste-fuerte); border-color: var(--celeste-fuerte); color:#fff; }
+  .modal-sub{
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--naranja-fuerte); margin-bottom: 4px; display:block;
+  }
+  .modal-caja h2{ color: var(--celeste-osc); font-size: 1.6rem; margin-bottom: 6px; }
+  .modal-caja p.lede{ margin: 0 0 20px; color: var(--tinta-suave); font-size: 1rem; }
+
+  /* ESTILOS DEL APUNTE (dentro del modal) */
+  .express{
+    background: var(--celeste); border: 2px solid var(--celeste-med);
+    border-radius: 22px; padding: 20px 24px; margin: 26px 0 18px;
+  }
+  .express .tag{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size: 0.95rem; color: var(--celeste-osc); display:block; margin-bottom: 10px; }
+  .express ul{ margin:0; padding-left: 20px; display:grid; gap: 6px; font-size: 0.94rem; color: var(--tinta); }
   .express li strong{ color: var(--naranja-osc); }
 
-  /* PREGUNTA CLAVE */
   .clave{
-    background: var(--naranja);
-    border: 2.5px dashed var(--naranja-fuerte);
-    border-radius: 22px;
-    padding: 22px 26px;
-    margin: 18px 0 30px;
-    text-align: center;
+    background: var(--naranja); border: 2.5px dashed var(--naranja-fuerte);
+    border-radius: 22px; padding: 22px 26px; margin: 18px 0 30px; text-align: center;
   }
-  .clave .tag{
-    font-family:'Baloo 2', sans-serif;
-    font-size: 1rem;
-    color: var(--naranja-osc);
-    display:block;
-    margin-bottom: 8px;
-  }
+  .clave .tag{ font-family:'Baloo 2', sans-serif; font-size: 1rem; color: var(--naranja-osc); display:block; margin-bottom: 8px; }
   .clave p{ margin: 0 0 6px; font-size: 1.05rem; color: var(--tinta); font-weight: 600; }
   .clave p.chica{ font-size: 0.85rem; font-weight: 400; color: var(--tinta-suave); margin-top: 10px; }
 
-  .sep{
-    text-align:center;
-    color: var(--celeste-fuerte);
-    font-size: 1.1rem;
-    letter-spacing: 0.3em;
-    margin: 38px 0;
-    opacity: 0.7;
+  .sep{ text-align:center; color: var(--celeste-fuerte); font-size: 1.1rem; letter-spacing: 0.3em; margin: 38px 0; opacity: 0.7; }
+
+  .indice{ display:flex; justify-content:center; gap: 10px; flex-wrap: wrap; margin: 26px 0 6px; }
+  .indice a{
+    font-family:'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.03em;
+    padding: 7px 14px; border-radius: 999px; background: var(--papel); box-shadow: var(--sombra);
+    color: var(--tinta-suave); transition: transform .15s ease, color .15s ease; border: 1.5px solid var(--celeste-med);
   }
+  .indice a:nth-child(even){ border-color: var(--naranja-med); }
+  .indice a:hover{ transform: translateY(-2px); color: var(--naranja-fuerte); }
 
-  section.capitulo{ padding: 10px 0 10px; scroll-margin-top: 90px; }
-
+  section.capitulo{ padding: 10px 0 10px; scroll-margin-top: 20px; }
   .titulo-cap{
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-    padding: 4px 16px 8px;
-    border-radius: 8px 18px 8px 18px;
-    color: var(--tinta);
+    display:inline-flex; align-items:center; gap: 8px; font-size: 1.5rem; margin-bottom: 6px;
+    padding: 4px 16px 8px; border-radius: 8px 18px 8px 18px; color: var(--tinta);
   }
   .titulo-cap.cel{ background: var(--celeste-med); }
   .titulo-cap.nar{ background: var(--naranja-med); }
 
-  .cuento p{
-    font-size: 1.02rem;
-    color: var(--tinta);
-    margin: 0 0 14px;
-  }
+  .cuento p{ font-size: 1.02rem; color: var(--tinta); margin: 0 0 14px; }
 
-  mark{
-    padding: 1px 5px;
-    border-radius: 5px;
-    background: linear-gradient(180deg, transparent 55%, var(--mark-color, var(--celeste-med)) 55%);
-  }
+  mark{ padding: 1px 5px; border-radius: 5px; background: linear-gradient(180deg, transparent 55%, var(--mark-color, var(--celeste-med)) 55%); }
   mark.m-cel{ --mark-color: var(--celeste-med); }
   mark.m-nar{ --mark-color: var(--naranja-med); }
 
   .nota{
-    background: var(--papel);
-    border: 2px dashed var(--celeste-fuerte);
-    border-radius: 18px;
-    padding: 16px 20px;
-    margin: 22px 0;
-    box-shadow: var(--sombra);
-    position: relative;
+    background: var(--papel); border: 2px dashed var(--celeste-fuerte); border-radius: 18px;
+    padding: 16px 20px; margin: 22px 0; box-shadow: var(--sombra); position: relative;
   }
   .nota.nar{ border-color: var(--naranja-fuerte); }
-  .nota .tag{
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    color: var(--tinta);
-    margin-bottom: 6px;
-    display:block;
-  }
+  .nota .tag{ font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--tinta); margin-bottom: 6px; display:block; }
   .nota p{ margin:0; font-size: 0.95rem; color: var(--tinta-suave); }
   .nota ul{ margin: 6px 0 0; padding-left: 20px; font-size: 0.95rem; color: var(--tinta-suave); }
 
   figure{ margin: 18px 0; }
   figure img{ box-shadow: var(--sombra); border: 2px solid var(--celeste-med); }
-  figcaption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--tinta-suave);
-    text-align:center;
-    margin-top: 8px;
-  }
+  figcaption{ font-family:'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--tinta-suave); text-align:center; margin-top: 8px; }
 
-  /* CAMINO / STAGE PILLS */
-  .camino{
-    background: var(--papel);
-    border-radius: 24px;
-    box-shadow: var(--sombra);
-    padding: 26px 20px 20px;
-    margin: 8px 0 36px;
-  }
+  .camino{ background: var(--papel); border-radius: 24px; box-shadow: var(--sombra); padding: 26px 20px 20px; margin: 8px 0 36px; }
   .camino h3{ text-align:center; font-size: 1.15rem; color: var(--celeste-osc); margin-bottom: 4px; }
   .camino p.sub{ text-align:center; font-size: 0.85rem; color: var(--tinta-suave); margin: 4px 0 22px; }
-  .rieles{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-  .pill{
-    font-family:'Baloo 2', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 10px 18px;
-    border-radius: 999px;
-    color: #fff;
-    white-space: nowrap;
-  }
+  .rieles{ display:flex; align-items:center; justify-content:center; flex-wrap: wrap; gap: 0; }
+  .pill{ font-family:'Baloo 2', sans-serif; font-size: 0.82rem; font-weight: 700; padding: 10px 18px; border-radius: 999px; color: #fff; white-space: nowrap; }
   .pill.cel{ background: var(--celeste-fuerte); }
   .pill.nar{ background: var(--naranja-fuerte); }
-  .riel-linea{
-    width: 34px; height: 3px;
-    background: var(--linea);
-    flex-shrink: 0;
-  }
-  .camino-desc{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-    gap: 10px;
-    margin-top: 18px;
-  }
-  .camino-desc span{
-    font-size: 0.78rem;
-    text-align:center;
-    color: var(--tinta-suave);
-  }
+  .riel-linea{ width: 34px; height: 3px; background: var(--linea); flex-shrink: 0; }
+  .camino-desc{ display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 10px; margin-top: 18px; }
+  .camino-desc span{ font-size: 0.78rem; text-align:center; color: var(--tinta-suave); }
 
-  .fichas{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-    margin: 18px 0 26px;
-  }
-  .ficha{
-    background: var(--papel);
-    border-radius: 16px;
-    padding: 14px 16px;
-    box-shadow: var(--sombra);
-    border-top: 5px solid var(--celeste-fuerte);
-  }
+  .fichas{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 18px 0 26px; }
+  .ficha{ background: var(--papel); border-radius: 16px; padding: 14px 16px; box-shadow: var(--sombra); border-top: 5px solid var(--celeste-fuerte); }
   .ficha.nar{ border-top-color: var(--naranja-fuerte); }
   .ficha .emoji{ font-size: 1.4rem; }
-  .ficha h4{
-    font-family:'Baloo 2', sans-serif;
-    font-size: 0.95rem;
-    margin: 6px 0 2px;
-    color: var(--tinta);
-  }
+  .ficha h4{ font-family:'Baloo 2', sans-serif; font-size: 0.95rem; margin: 6px 0 2px; color: var(--tinta); }
   .ficha p{ margin:0; font-size: 0.82rem; color: var(--tinta-suave); font-style: italic; }
 
-  /* QUIZ */
-  .quiz{
-    background: var(--papel);
-    border-radius: 20px;
-    padding: 22px 24px;
-    box-shadow: var(--sombra);
-    margin: 30px 0;
-    border: 2px solid var(--celeste-med);
-  }
+  .quiz{ background: var(--papel); border-radius: 20px; padding: 22px 24px; box-shadow: var(--sombra); margin: 30px 0; border: 2px solid var(--celeste-med); }
   .quiz h3{ font-size: 1.15rem; margin-bottom: 4px; color: var(--celeste-osc); }
   .quiz p.sub{ font-size: 0.85rem; color: var(--tinta-suave); margin: 0 0 16px; }
-  .quiz details{
-    background: var(--papel-crema);
-    border-radius: 14px;
-    padding: 4px 16px;
-    margin-bottom: 10px;
-  }
-  .quiz summary{
-    cursor: pointer;
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: var(--tinta);
-    padding: 12px 0;
-    list-style: none;
-    display:flex;
-    align-items:center;
-    gap: 10px;
-  }
+  .quiz details{ background: var(--papel-crema); border-radius: 14px; padding: 4px 16px; margin-bottom: 10px; }
+  .quiz summary{ cursor: pointer; font-size: 0.98rem; font-weight: 600; color: var(--tinta); padding: 12px 0; list-style: none; display:flex; align-items:center; gap: 10px; }
   .quiz summary::-webkit-details-marker{ display:none; }
-  .quiz summary::before{
-    content: "＋";
-    font-family:'IBM Plex Mono', monospace;
-    color: var(--naranja-fuerte);
-    font-size: 0.9rem;
-    flex-shrink:0;
-  }
+  .quiz summary::before{ content: "＋"; font-family:'IBM Plex Mono', monospace; color: var(--naranja-fuerte); font-size: 0.9rem; flex-shrink:0; }
   .quiz details[open] summary::before{ content: "－"; }
-  .quiz .respuesta{
-    font-size: 0.92rem;
-    color: var(--tinta-suave);
-    padding: 0 0 14px 26px;
-    border-top: 1px dashed var(--linea);
-    padding-top: 10px;
-  }
+  .quiz .respuesta{ font-size: 0.92rem; color: var(--tinta-suave); padding: 0 0 14px 26px; border-top: 1px dashed var(--linea); padding-top: 10px; }
 
-  table.comparativa{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 8px;
-    margin: 20px 0 10px;
-    display: block;
-    overflow-x: auto;
-  }
-  table.comparativa th{
-    text-align:left;
-    font-family:'Baloo 2', sans-serif;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--tinta-suave);
-    padding: 0 14px 6px;
-  }
-  table.comparativa td{
-    background: var(--papel);
-    padding: 12px 14px;
-    font-size: 0.9rem;
-    color: var(--tinta);
-    box-shadow: var(--sombra);
-  }
+  table.comparativa{ width: 100%; border-collapse: separate; border-spacing: 0 8px; margin: 20px 0 10px; display: block; overflow-x: auto; }
+  table.comparativa th{ text-align:left; font-family:'Baloo 2', sans-serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta-suave); padding: 0 14px 6px; }
+  table.comparativa td{ background: var(--papel); padding: 12px 14px; font-size: 0.9rem; color: var(--tinta); box-shadow: var(--sombra); }
   table.comparativa tr td:first-child{ border-radius: 12px 0 0 12px; font-weight: 700; white-space: nowrap; }
   table.comparativa tr td:last-child{ border-radius: 0 12px 12px 0; }
 
-  footer{
-    border-top: 1px solid var(--linea);
-    padding: 30px 0 40px;
-    margin-top: 40px;
-  }
-  footer .wrap{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 0.82rem;
-    color: var(--tinta-suave);
-  }
+  footer{ border-top: 1px solid var(--linea); padding: 30px 0 40px; margin-top: 40px; }
+  footer .wrap{ display:flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; color: var(--tinta-suave); }
 
   @media (max-width: 600px){
     .hero-box{ padding: 30px 18px 22px; }
     .riel-linea{ width: 18px; }
   }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
+  @media (max-width: 480px){
+    .modal-caja{ padding: 34px 20px 26px; }
+    .modal-caja::before{ margin: -34px -20px 0; }
   }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-
-<div id="progreso"></div>
 
 <header class="site">
   <nav class="wrap">
@@ -447,7 +285,6 @@
 </header>
 
 <main>
-
   <div class="wrap">
 
     <section class="hero-box hero">
@@ -463,13 +300,68 @@
         <circle cx="55" cy="55" r="5" fill="#4FA9D8"/>
         <circle cx="5" cy="5" r="4" fill="#BCE4F5"/>
       </svg>
-      <p class="eyebrow">Apunte de cátedra · Zoología Agrícola</p>
-      <h1>🦋 Metamorfosis de insectos</h1>
+      <p class="eyebrow">Cátedra · Zoología Agrícola</p>
+      <h1>📚 Material de Estudio</h1>
       <svg class="subrayado" viewBox="0 0 220 18" xmlns="http://www.w3.org/2000/svg">
         <path d="M4,10 Q40,2 76,10 T148,10 T216,10" stroke="#F0904A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
       </svg>
-      <p class="lede">La historia de cómo unos bichos anónimos del suelo modificaron para siempre los ecosistemas y la agricultura.</p>
+      <p class="lede">Apuntes de la cátedra para acompañar el estudio de cada unidad. Elegí un tema para abrirlo.</p>
     </section>
+
+    <div class="tarjetas-material">
+
+      <div class="tarjeta-material clickeable" onclick="abrirModal('modal-metamorfosis')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')abrirModal('modal-metamorfosis')">
+        <div class="tm-media">
+          <img src="B4.png" alt="Metamorfosis de insectos">
+        </div>
+        <div class="tm-cuerpo">
+          <h3>🦋 METAMORFOSIS</h3>
+          <p class="tm-desc">Ametábolos, metamorfosis incompleta, intermedia y completa: qué las diferencia y por qué existen.</p>
+          <div class="tm-pie">
+            <span class="tm-tag">Ver apunte</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta-material naranja-tema">
+        <div class="tm-media">
+          <span class="eyebrow" style="font-size:1.6rem;">🌱</span>
+        </div>
+        <div class="tm-cuerpo">
+          <h3>PLAGAS DE SOJA</h3>
+          <p class="tm-desc">Apunte en preparación sobre las principales plagas del cultivo de soja.</p>
+          <div class="tm-pie">
+            <span class="tm-tag">Próximamente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta-material">
+        <div class="tm-media">
+          <span class="eyebrow" style="font-size:1.6rem;">🌾</span>
+        </div>
+        <div class="tm-cuerpo">
+          <h3>PLAGAS DE MAÍZ</h3>
+          <p class="tm-desc">Apunte en preparación sobre las principales plagas del cultivo de maíz.</p>
+          <div class="tm-pie">
+            <span class="tm-tag brilla">Próximamente</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- MODAL: METAMORFOSIS (apunte completo) -->
+<div class="modal-overlay" id="modal-metamorfosis" onclick="if(event.target===this)cerrarModal('modal-metamorfosis')">
+  <div class="modal-caja ancha" id="modal-caja-metamorfosis">
+    <div id="progreso-modal"></div>
+    <button class="modal-cerrar" onclick="cerrarModal('modal-metamorfosis')" aria-label="Cerrar">✕</button>
+    <span class="modal-sub">Apunte de cátedra</span>
+    <h2>🦋 Metamorfosis de insectos</h2>
+    <p class="lede">La historia de cómo unos bichos anónimos del suelo modificaron para siempre los ecosistemas y la agricultura.</p>
 
     <div class="express">
       <span class="tag">⚡ Resumen</span>
@@ -500,7 +392,6 @@
 
     <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
 
-    <!-- CAMINO / STAGE PILLS -->
     <section class="camino" id="camino">
       <h3>🗺️ El camino de la metamorfosis</h3>
       <p class="sub">Cuatro formas distintas de resolver el mismo problema: crecer y transformarse</p>
@@ -523,30 +414,19 @@
 
     <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
 
-    <!-- CAPÍTULO 1 -->
     <section class="capitulo cuento" id="cap1">
       <h2 class="titulo-cap cel">🌱 Capítulo 1 — Los primeros insectos: los ametábolos</h2>
-      <p>
-        Conocemos bastante bien nuestra propia historia evolutiva: descendemos de antepasados primates y, a lo largo de millones de años, fuimos cambiando anatómica y funcionalmente hasta llegar a nuestra forma actual.
-      </p>
-      <p>
-        Los insectos atravesaron un proceso semejante. Moscas, polillas, escarabajos y picudos no siempre tuvieron el aspecto actual: evolucionaron a partir de formas mucho más primitivas, pequeñas y simples, que ni siquiera podían volar grandes distancias.
-      </p>
-      <p>
-        Los primeros insectos eran organismos relativamente sencillos. Muchos carecían completamente de alas (apterigotos) y tanto los adultos como su descendencia permanecían asociados al mismo ambiente durante toda su vida.
-      </p>
-      <p>
-        Su característica más importante era el desarrollo: al eclosionar del huevo, el juvenil ya era prácticamente una copia del adulto. La única diferencia real era el tamaño. Con cada muda crecía, pero sin modificar de forma importante su cuerpo.
-      </p>
+      <p>Conocemos bastante bien nuestra propia historia evolutiva: descendemos de antepasados primates y, a lo largo de millones de años, fuimos cambiando anatómica y funcionalmente hasta llegar a nuestra forma actual.</p>
+      <p>Los insectos atravesaron un proceso semejante. Moscas, polillas, escarabajos y picudos no siempre tuvieron el aspecto actual: evolucionaron a partir de formas mucho más primitivas, pequeñas y simples, que ni siquiera podían volar grandes distancias.</p>
+      <p>Los primeros insectos eran organismos relativamente sencillos. Muchos carecían completamente de alas (apterigotos) y tanto los adultos como su descendencia permanecían asociados al mismo ambiente durante toda su vida.</p>
+      <p>Su característica más importante era el desarrollo: al eclosionar del huevo, el juvenil ya era prácticamente una copia del adulto. La única diferencia real era el tamaño. Con cada muda crecía, pero sin modificar de forma importante su cuerpo.</p>
 
       <figure>
         <img src="B2.png" alt="Estadios sucesivos de un insecto ametábolo mostrando la misma morfología en distinto tamaño">
         <figcaption>Todos los individuos comparten la misma morfología — la única diferencia es el tamaño alcanzado después de cada muda.</figcaption>
       </figure>
 
-      <p>
-        Hoy todavía existen representantes vivos de este grupo: verdaderos <mark class="m-cel">"fósiles vivientes"</mark> que conservan las características de los primeros insectos que habitaron la Tierra, antes de que existiera la metamorfosis.
-      </p>
+      <p>Hoy todavía existen representantes vivos de este grupo: verdaderos <mark class="m-cel">"fósiles vivientes"</mark> que conservan las características de los primeros insectos que habitaron la Tierra, antes de que existiera la metamorfosis.</p>
 
       <div class="nota">
         <span class="tag">🌿 Importancia agronómica</span>
@@ -578,32 +458,23 @@
 
     <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
 
-    <!-- CAPÍTULO 2 -->
     <section class="capitulo cuento" id="cap2">
       <h2 class="titulo-cap nar">🦗 Capítulo 2 — Metamorfosis incompleta</h2>
-      <p>
-        Igual que los ametábolos, estos insectos nacen con un aspecto muy semejante al del adulto. A medida que crecen van desarrollando progresivamente los esbozos alares, aumentan de tamaño y completan sus órganos reproductores.
-      </p>
+      <p>Igual que los ametábolos, estos insectos nacen con un aspecto muy semejante al del adulto. A medida que crecen van desarrollando progresivamente los esbozos alares, aumentan de tamaño y completan sus órganos reproductores.</p>
 
       <figure>
         <img src="B3.png" alt="Estadios ninfales sucesivos de un insecto con metamorfosis incompleta">
         <figcaption>Distintos estadios ninfales: cambian tamaño y color, pero conservan la misma forma corporal.</figcaption>
       </figure>
 
-      <p>
-        A esta sucesión ordenada de cambios, desde que el insecto eclosiona hasta que llega a adulto, la llamamos <mark class="m-nar">metamorfosis</mark>.
-      </p>
+      <p>A esta sucesión ordenada de cambios, desde que el insecto eclosiona hasta que llega a adulto, la llamamos <mark class="m-nar">metamorfosis</mark>.</p>
 
       <figure>
         <img src="B4.png" alt="Esquema del ciclo huevo, ninfa, adulto en metamorfosis incompleta">
       </figure>
 
-      <p>
-        A diferencia de los ametábolos, la ninfa ya no es una copia casi idéntica del adulto: conserva la misma organización corporal (cabeza, tórax, abdomen bien diferenciados) pero todavía debe completar alas y aparato reproductor. Cada muda es un paso más hacia el estado adulto.
-      </p>
-      <p>
-        Esa similitud entre ninfa y adulto se explica en el huevo: el embrión completa gran parte de su desarrollo antes de eclosionar. Por eso a estos insectos se los llama <mark class="m-cel">ortogénicos</mark>.
-      </p>
+      <p>A diferencia de los ametábolos, la ninfa ya no es una copia casi idéntica del adulto: conserva la misma organización corporal (cabeza, tórax, abdomen bien diferenciados) pero todavía debe completar alas y aparato reproductor. Cada muda es un paso más hacia el estado adulto.</p>
+      <p>Esa similitud entre ninfa y adulto se explica en el huevo: el embrión completa gran parte de su desarrollo antes de eclosionar. Por eso a estos insectos se los llama <mark class="m-cel">ortogénicos</mark>.</p>
 
       <div class="nota">
         <span class="tag">📌 Para recordar</span>
@@ -638,12 +509,8 @@
         ✏️ Buscá otro insecto de metamorfosis incompleta y explicá por qué pertenece a este grupo. Compáralo con un ametábolo: ¿cuáles son las diferencias?
       </p>
 
-      <p>
-        Esta forma de metamorfosis tiene una desventaja evolutiva: como ninfa y adulto comparten morfología y recursos, ocupan el mismo ambiente y compiten entre sí. En un lote de soja con chinches vas a encontrar, todos juntos, huevos, ninfas de distintos estadios y adultos alimentándose sobre las mismas plantas.
-      </p>
-      <p>
-        Esa competencia interna entre generaciones fue la presión que impulsó una de las grandes innovaciones evolutivas de los insectos: repartir las funciones de alimentación, crecimiento, dispersión y reproducción entre etapas distintas del ciclo de vida. Así apareció la <mark class="m-nar">metamorfosis completa</mark>.
-      </p>
+      <p>Esta forma de metamorfosis tiene una desventaja evolutiva: como ninfa y adulto comparten morfología y recursos, ocupan el mismo ambiente y compiten entre sí. En un lote de soja con chinches vas a encontrar, todos juntos, huevos, ninfas de distintos estadios y adultos alimentándose sobre las mismas plantas.</p>
+      <p>Esa competencia interna entre generaciones fue la presión que impulsó una de las grandes innovaciones evolutivas de los insectos: repartir las funciones de alimentación, crecimiento, dispersión y reproducción entre etapas distintas del ciclo de vida. Así apareció la <mark class="m-nar">metamorfosis completa</mark>.</p>
 
       <p style="font-size:0.9rem; color:var(--tinta-suave); font-style:italic;">
         ✏️ Para pensar: ¿por qué a la ninfa y al adulto de metamorfosis incompleta les cuesta compartir el mismo cultivo?
@@ -652,27 +519,18 @@
 
     <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
 
-    <!-- CAPÍTULO 3 -->
     <section class="capitulo cuento" id="cap3">
       <h2 class="titulo-cap cel">🐛 Capítulo 3 — Metamorfosis completa</h2>
-      <p>
-        Representa uno de los mayores avances evolutivos de los insectos: el ciclo de vida se dividió en etapas altamente especializadas, cada una con una función biológica distinta.
-      </p>
-      <p>
-        La larva se especializa en alimentarse, crecer y acumular reservas. El adulto se especializa en dispersarse y reproducirse. Esa división reduce la competencia entre ambos estados y aprovecha mucho mejor los recursos disponibles.
-      </p>
-      <p>
-        Otra diferencia clave está en el huevo: el tiempo de desarrollo embrionario es menor, así que al eclosionar el individuo todavía no tiene la organización corporal del adulto. Por eso las formas juveniles son completamente distintas y se las llama <mark class="m-cel">progénicas</mark>.
-      </p>
+      <p>Representa uno de los mayores avances evolutivos de los insectos: el ciclo de vida se dividió en etapas altamente especializadas, cada una con una función biológica distinta.</p>
+      <p>La larva se especializa en alimentarse, crecer y acumular reservas. El adulto se especializa en dispersarse y reproducirse. Esa división reduce la competencia entre ambos estados y aprovecha mucho mejor los recursos disponibles.</p>
+      <p>Otra diferencia clave está en el huevo: el tiempo de desarrollo embrionario es menor, así que al eclosionar el individuo todavía no tiene la organización corporal del adulto. Por eso las formas juveniles son completamente distintas y se las llama <mark class="m-cel">progénicas</mark>.</p>
 
       <div class="nota nar">
         <span class="tag">¿Qué implica esto?</span>
         <p>La larva no necesita parecerse al adulto porque no va a cumplir las mismas funciones. Su único objetivo es comer, crecer y acumular energía. Por eso tiene un aparato bucal muy eficiente y un cuerpo diseñado exclusivamente para alimentarse — sin alas ni órganos reproductores funcionales, porque todavía no los necesita.</p>
       </div>
 
-      <p>
-        Como la larva y el adulto son tan distintos, hace falta un estado intermedio donde ocurra la reorganización corporal completa: la <mark class="m-nar">pupa</mark>. Ahí los tejidos larvales se reorganizan y se desarrollan alas, musculatura de vuelo y órganos reproductores.
-      </p>
+      <p>Como la larva y el adulto son tan distintos, hace falta un estado intermedio donde ocurra la reorganización corporal completa: la <mark class="m-nar">pupa</mark>. Ahí los tejidos larvales se reorganizan y se desarrollan alas, musculatura de vuelo y órganos reproductores.</p>
 
       <div class="nota">
         <span class="tag">📌 Para recordar</span>
@@ -685,9 +543,7 @@
         <figcaption><em>Spodoptera frugiperda</em>, una de las principales plagas agrícolas de la región. Las primeras larvas no se parecen en nada a la polilla adulta.</figcaption>
       </figure>
 
-      <p>
-        Cuando la larva alcanza su último estadio, entra en pupa: deja de alimentarse y ocurre una reorganización interna profunda. De ahí emerge la polilla adulta, lista para dispersarse, encontrar nuevas plantas hospedantes y reproducirse.
-      </p>
+      <p>Cuando la larva alcanza su último estadio, entra en pupa: deja de alimentarse y ocurre una reorganización interna profunda. De ahí emerge la polilla adulta, lista para dispersarse, encontrar nuevas plantas hospedantes y reproducirse.</p>
 
       <p style="font-size:0.9rem; color:var(--tinta-suave); font-style:italic;">
         ✏️ ¿Entendiste la diferencia? Explicá con tus palabras: ametábolos vs. metábolos, y dentro de estos, incompleta vs. completa.
@@ -696,18 +552,11 @@
 
     <div class="sep">✧₊˚ ⋆｡°✩ ⋆｡°✩ ₊˚✧</div>
 
-    <!-- CAPÍTULO 4 -->
     <section class="capitulo cuento" id="cap4">
       <h2 class="titulo-cap nar">🌾 Capítulo 4 — Metamorfosis intermedia</h2>
-      <p>
-        Un caso particular presente en insectos de gran importancia agrícola, como los trips y las moscas blancas.
-      </p>
-      <p>
-        Lo importante: estos insectos pertenecen al grupo de metamorfosis incompleta, porque sus juveniles nacen con una organización corporal semejante a la del adulto — también son ortogénicos.
-      </p>
-      <p>
-        La diferencia con el resto de los hemimetábolos es que, antes de transformarse en adultos, las últimas ninfas quedan inmóviles durante un corto período. Ese reposo puede parecer una pupa, pero no lo es: no hay la reorganización profunda propia de la metamorfosis completa.
-      </p>
+      <p>Un caso particular presente en insectos de gran importancia agrícola, como los trips y las moscas blancas.</p>
+      <p>Lo importante: estos insectos pertenecen al grupo de metamorfosis incompleta, porque sus juveniles nacen con una organización corporal semejante a la del adulto — también son ortogénicos.</p>
+      <p>La diferencia con el resto de los hemimetábolos es que, antes de transformarse en adultos, las últimas ninfas quedan inmóviles durante un corto período. Ese reposo puede parecer una pupa, pero no lo es: no hay la reorganización profunda propia de la metamorfosis completa.</p>
 
       <div class="nota">
         <span class="tag">📌 Para recordar</span>
@@ -768,7 +617,7 @@
     </div>
 
   </div>
-</main>
+</div>
 
 <footer>
   <div class="wrap">
@@ -778,12 +627,37 @@
 </footer>
 
 <script>
-  const barra = document.getElementById('progreso');
-  window.addEventListener('scroll', () => {
-    const alto = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = alto > 0 ? (window.scrollY / alto) * 100 : 0;
-    barra.style.width = pct + '%';
+  function abrirModal(id){
+    const overlay = document.getElementById(id);
+    overlay.classList.add('abierto');
+    document.body.style.overflow = 'hidden';
+    const caja = overlay.querySelector('.modal-caja');
+    if(caja) caja.scrollTop = 0;
+    const barra = overlay.querySelector('#progreso-modal');
+    if(barra) barra.style.width = '0%';
+  }
+  function cerrarModal(id){
+    document.getElementById(id).classList.remove('abierto');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal-overlay.abierto').forEach(function(m){
+        cerrarModal(m.id);
+      });
+    }
   });
+
+  // barra de progreso de lectura dentro del modal de metamorfosis
+  const cajaMeta = document.getElementById('modal-caja-metamorfosis');
+  const barraMeta = document.getElementById('progreso-modal');
+  if(cajaMeta && barraMeta){
+    cajaMeta.addEventListener('scroll', () => {
+      const alto = cajaMeta.scrollHeight - cajaMeta.clientHeight;
+      const pct = alto > 0 ? (cajaMeta.scrollTop / alto) * 100 : 0;
+      barraMeta.style.width = pct + '%';
+    });
+  }
 </script>
 
 </body>
