@@ -221,8 +221,16 @@
      adentro del <div class="mesa-nota"> de la celda correspondiente y, si se
      quiere resaltar el día, agregar la clase "con-mesa" al div.celda. */
   .celda.con-mesa{
-    background: rgba(76,138,50,0.14);
-    border-color: var(--verde-vivo);
+    background: var(--musgo);
+    border-color: var(--oro);
+    box-shadow: 0 0 0 2px var(--oro), 0 8px 18px -8px rgba(46,93,36,0.6);
+  }
+  .celda.con-mesa .num{
+    color: var(--pergamino-claro);
+  }
+  .celda.con-mesa .mesa-nota{
+    color: var(--oro);
+    font-weight: 700;
   }
 
   .calendario-referencia{
@@ -462,7 +470,7 @@
             <div class="celda"><span class="num">11</span><div class="mesa-nota"></div></div>
             <div class="celda"><span class="num">12</span><div class="mesa-nota"></div></div>
             <div class="celda"><span class="num">13</span><div class="mesa-nota"></div></div>
-            <div class="celda"><span class="num">14</span><div class="mesa-nota"></div></div>
+            <div class="celda con-mesa"><span class="num">14</span><div class="mesa-nota">Mesa de examen</div></div>
             <div class="celda finde"><span class="num">15</span><div class="mesa-nota"></div></div>
             <div class="celda finde"><span class="num">16</span><div class="mesa-nota"></div></div>
 
@@ -494,7 +502,6 @@
             <div class="celda vacia"></div>
           </div>
 
-          <p class="calendario-referencia">Cuando se confirme la fecha de la mesa, la vamos a marcar acá con el día correspondiente.</p>
         </div>
 
         <!-- FORMULARIO DE CONSULTAS -->
@@ -513,7 +520,7 @@
             </div>
             <div class="campo">
               <label for="mensaje">Consulta</label>
-              <textarea id="mensaje" name="message" required placeholder="Contanos tu duda con la tranquilidad que necesites..."></textarea>
+              <textarea id="mensaje" name="message" required placeholder="Dejanos tu consulta"></textarea>
               <span class="contador-palabras" id="contador-palabras">0 / 10.000 palabras</span>
             </div>
 
