@@ -141,7 +141,7 @@
   /* Bloque pregunta principal */
   .pregunta{
     text-align:center;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto 44px;
   }
   .pregunta h1{
@@ -155,12 +155,13 @@
     color: #3E5236;
   }
 
-  /* Marco de la foto de ejemplo */
-  .foto-ejemplo{
+  /* Marco de foto genérico (se reutiliza para todas las imágenes D1-D5) */
+  .foto{
     max-width: 620px;
-    margin: 0 auto 54px;
+    margin: 0 auto 12px;
   }
-  .foto-ejemplo .marco{
+  .foto.ancho{ max-width: 780px; }
+  .foto .marco{
     width: 100%;
     border-radius: 18px;
     border: 1.5px solid var(--musgo-oscuro);
@@ -170,15 +171,15 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    min-height: 260px;
+    min-height: 200px;
   }
-  .foto-ejemplo .marco img{
+  .foto .marco img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     display:block;
   }
-  .foto-ejemplo figcaption{
+  .foto figcaption{
     margin-top: 12px;
     text-align:center;
     font-family: 'IBM Plex Mono', monospace;
@@ -186,6 +187,115 @@
     letter-spacing: 0.03em;
     color: var(--musgo);
   }
+
+  .foto-ejemplo{ margin-bottom: 54px; }
+
+  /* fila de dos imagenes lado a lado (D2 / D3) */
+  .fila-fotos{
+    display:flex;
+    gap: 20px;
+    max-width: 780px;
+    margin: 0 auto 12px;
+    flex-wrap: wrap;
+  }
+  .fila-fotos .foto{
+    flex: 1 1 260px;
+    margin-bottom: 0;
+  }
+
+  /* Intro general antes de las tres partes */
+  .intro-partes{
+    max-width: 760px;
+    margin: 0 auto 50px;
+  }
+  .intro-partes p{
+    font-size: 0.98rem;
+    color: #3E5236;
+    margin: 0 0 14px;
+  }
+  .intro-partes p:last-child{ margin-bottom: 0; }
+  .intro-partes strong{ color: var(--negro); }
+
+  /* Secciones numeradas: las 3 partes fundamentales */
+  .parte{
+    max-width: 760px;
+    margin: 0 auto 64px;
+    padding-top: 44px;
+    border-top: 1px solid var(--linea);
+  }
+  .parte:first-of-type{
+    border-top: none;
+    padding-top: 0;
+  }
+  .parte-header{
+    display:flex;
+    align-items:flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .parte-num{
+    flex: 0 0 auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--pergamino);
+    background: var(--verde-vivo);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight: 600;
+  }
+  .parte-header h2{
+    font-size: 1.35rem;
+    line-height: 1.3;
+    padding-top: 4px;
+  }
+  .parte p{
+    font-size: 0.96rem;
+    color: #3E5236;
+    margin: 0 0 14px;
+  }
+  .parte p:last-of-type{ margin-bottom: 0; }
+  .parte strong{ color: var(--negro); }
+  .parte em.orden{
+    font-style: normal;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--verde-vivo);
+  }
+
+  .lista-tipos{
+    list-style:none;
+    margin: 0 0 18px;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap: 8px;
+  }
+  .lista-tipos li{
+    position:relative;
+    padding: 10px 16px 10px 34px;
+    background: var(--pergamino-claro);
+    border: 1px solid var(--linea);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #3E5236;
+  }
+  .lista-tipos li::before{
+    content:"";
+    position:absolute;
+    left: 14px;
+    top: 15px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--verde-vivo);
+  }
+
+  .parte .foto{ margin-top: 24px; }
 
   /* Recomendaciones */
   .recomendaciones{
@@ -242,6 +352,7 @@
 
   @media (max-width: 480px){
     .wrap{ padding: 0 20px; }
+    .fila-fotos{ flex-direction: column; }
   }
 </style>
 </head>
@@ -269,16 +380,113 @@
 
       <div class="pregunta">
         <p class="eyebrow">Guía práctica</p>
-        <h1>¿Cómo armar correctamente la caja entomológica?</h1>
-        <p class="lede">Repasá acá los criterios que se tienen en cuenta para presentar una caja entomológica prolija y bien armada, tanto para la cursada como para el examen final.</p>
+        <h1>¿Cómo armar correctamente una caja entomológica?</h1>
+        <p class="lede">La imagen muestra un ejemplo de una caja entomológica estándar utilizada por los estudiantes de Ingeniería Agronómica. Si bien la distribución de los insectos y la ubicación de las diferentes secciones pueden variar según el diseño de cada caja, al momento de presentarla deben estar presentes tres partes fundamentales.</p>
       </div>
 
-      <figure class="foto-ejemplo">
+      <figure class="foto foto-ejemplo ancho">
         <div class="marco">
-          <img src="A5.png" alt="Ejemplo de caja entomológica armada">
+          <img src="D1.png" alt="Ejemplo de caja entomológica estándar">
         </div>
-        <figcaption>Ejemplo de caja entomológica</figcaption>
+        <figcaption>Caja entomológica estándar</figcaption>
       </figure>
+
+      <!-- PARTE 1: Órdenes -->
+      <div class="parte">
+        <div class="parte-header">
+          <span class="parte-num">1</span>
+          <h2>Los órdenes de insectos</h2>
+        </div>
+
+        <p>Cada estudiante podrá recolectar una cantidad y diversidad diferente de insectos. Sin embargo, todos los ejemplares pertenecen a un orden determinado y, por lo tanto, deben organizarse dentro de la caja según su clasificación taxonómica.</p>
+
+        <p>Por ejemplo, si se recolectaron cinco mariposas o polillas, todos los ejemplares deberán ubicarse bajo una etiqueta general con el nombre del orden <em class="orden">LEPIDOPTERA</em>. Del mismo modo, si se recolectaron seis chinches, deberán agruparse bajo una etiqueta general denominada <em class="orden">HEMIPTERA</em>, y así sucesivamente con los demás órdenes.</p>
+
+        <p>Además, es importante que cada insecto cuente con su propia etiqueta de identificación. En las sucesivas clases prácticas se abordarán los criterios necesarios para clasificar y montar correctamente los diferentes grupos de insectos.</p>
+
+        <p>En las imágenes siguientes se puede observar la ubicación de la etiqueta general correspondiente al orden y la etiqueta individual de cada ejemplar.</p>
+
+        <div class="fila-fotos">
+          <figure class="foto">
+            <div class="marco">
+              <img src="D2.png" alt="Etiqueta general del orden en la caja entomológica">
+            </div>
+            <figcaption>Etiqueta general del orden</figcaption>
+          </figure>
+          <figure class="foto">
+            <div class="marco">
+              <img src="D3.png" alt="Etiqueta individual de cada ejemplar">
+            </div>
+            <figcaption>Etiqueta individual del ejemplar</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- PARTE 2: Larva -->
+      <div class="parte">
+        <div class="parte-header">
+          <span class="parte-num">2</span>
+          <h2>La larva</h2>
+        </div>
+
+        <p>El reconocimiento de las diferentes etapas del ciclo de vida de los insectos constituye una parte fundamental del aprendizaje. En los insectos con metamorfosis completa, como los <em class="orden">LEPIDOPTERA</em>, <em class="orden">COLEOPTERA</em> y <em class="orden">DIPTERA</em>, el estadio juvenil recibe el nombre de larva.</p>
+
+        <p>Muchas larvas son consideradas plagas de importancia agrícola. Por este motivo, al momento de presentar la caja entomológica, deberá incluirse al menos una larva.</p>
+
+        <p>La larva se conservará en un tubo que será entregado junto con la caja. Dentro del tubo deberá colocarse el líquido de conservación que estará disponible durante las clases prácticas. Posteriormente, el tubo deberá ubicarse en algún sector de la caja entomológica.</p>
+
+        <p>A diferencia de los insectos montados, para esta sección no será necesario incluir etiquetas con el orden taxonómico, el lugar de recolección u otros datos. El único requisito será identificar el tipo de larva. Por ejemplo:</p>
+
+        <ul class="lista-tipos">
+          <li>Larva eruciforme</li>
+          <li>Larva limaciforme</li>
+          <li>Larva campodeiforme</li>
+        </ul>
+
+        <p>La identificación de los diferentes tipos de larvas se abordará y desarrollará durante las clases prácticas.</p>
+
+        <figure class="foto">
+          <div class="marco">
+            <img src="D4.png" alt="Tubo con larva conservada en la caja entomológica">
+          </div>
+          <figcaption>Tubo con larva conservada</figcaption>
+        </figure>
+      </div>
+
+      <!-- PARTE 3: Preparados -->
+      <div class="parte">
+        <div class="parte-header">
+          <span class="parte-num">3</span>
+          <h2>Los preparados</h2>
+        </div>
+
+        <p>Durante las sucesivas clases prácticas se realizarán diferentes preparados microscópicos sobre portaobjetos. Estos montajes permitirán observar en detalle estructuras pequeñas de los insectos que son difíciles de apreciar a simple vista.</p>
+
+        <p>Se podrán realizar preparados de insectos completos, como pulgones o trips, o de estructuras específicas, tales como:</p>
+
+        <ul class="lista-tipos">
+          <li>Aparatos bucales</li>
+          <li>Patas</li>
+          <li>Alas</li>
+          <li>Antenas</li>
+          <li>Otras estructuras de interés</li>
+        </ul>
+
+        <p>Todos los preparados deberán conservarse dentro de la caja entomológica, en una sección destinada específicamente a los portaobjetos.</p>
+
+        <p>Debido a que muchas cajas entomológicas se utilizan y se transfieren entre diferentes generaciones de estudiantes, algunas ya cuentan con un soporte de madera diseñado para colocar los portaobjetos. En estos casos, solo será necesario ubicar los preparados en los espacios correspondientes.</p>
+
+        <p>Sin embargo, la mayoría de las cajas no dispone de esta sección. Por lo tanto, cada estudiante deberá confeccionarla y ubicarla en el sector de la caja que considere más adecuado.</p>
+
+        <p>La elaboración del soporte es sencilla. Puede realizarse utilizando una o dos tiras de tergopol, en las cuales se deberán efectuar pequeños cortes para insertar y mantener los portaobjetos en posición. A continuación, se presentan dos opciones para organizar esta sección:</p>
+
+        <figure class="foto">
+          <div class="marco">
+            <img src="D6.png" alt="Opciones de soporte para portaobjetos en la caja entomológica">
+          </div>
+          <figcaption>Opciones de soporte para portaobjetos</figcaption>
+        </figure>
+      </div>
 
       <div class="recomendaciones">
         <h2>RECOMENDACIONES:</h2>
